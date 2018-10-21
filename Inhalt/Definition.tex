@@ -5,7 +5,28 @@
 
 \subsection{Voraussetzungen} 
 \label{sec:voraussetzungen}
-Welche Rahmenbedingungen müssen erfüllt werden
+Es gibt einige Voraussetzungen, die eine Wahl erfüllen muss, damit man die Schulze Methode auf diese Wahl anwenden kann.
+
+\begin{enumerate}
+\item Es werden Kandidaten benötigt, die sich zur Wahl stellen. Hierbei muss es mindestens zwei Kandidaten geben, da sonst keine Rangfolge erstellt werden kann. Bei zwei Kandidaten ist die Lösung jedoch trivial, da dort der Gewinner der Kandidat ist, der am häufigsten, von den Wählern dem Gegner vorgezogen wurde.
+
+Mathematische Definition:
+Sei A eine endliche nicht leere Menge an Kandidaten. Wobei die Anzahl der Kandidaten C ist und gilt: 
+\[
+  C \in\ \mathbb{N}\  und \ 1 < C <\ \infty
+\]
+
+\item Jeder Wähler ordnet die Kandidaten eine Zahl zu und aus dieser Zahl wird eine Rangfolge erstellt. Je kleiner die Zahl ist desto höher ist die Platzierung. Hierbei ist die Größe der Zahl oder der Abstand uninteressant, da nur die Rangfolge betrachtet wird.
+
+Des weiteren gilt:
+\begin{enumerate}
+\item \label{itm:Regel1} Es können mehrere Kandidaten den gleichen Rang haben, dass bedeutet, dass kein Kandidat dem anderen Kandidaten auf der selben Platzierung vorgezogen wird. 
+\item Wenn ein Wähler keine Bewertung für einen Kandidaten abgibt, werden alle Kandidaten, die eine Bewertung haben, diesem Kandidaten vorgezogen. Werden mehrere Kandidaten nicht bewertet, werden sie wir im vorherigen Punkt bewertet.
+\end{enumerate}
+
+
+
+\end{enumerate}
 
 
 \subsection{Theoretische Grundlagen} 
