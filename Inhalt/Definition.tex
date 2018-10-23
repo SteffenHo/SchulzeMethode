@@ -8,7 +8,7 @@
 Es gibt einige Voraussetzungen, die eine Wahl erfüllen muss, damit man die Schulze Methode auf diese Wahl anwenden kann.
 
 \begin{enumerate}
-\item Es werden Kandidaten benötigt, die sich zur Wahl stellen. Hierbei muss es mindestens zwei Kandidaten geben, da sonst keine Rangfolge erstellt werden kann. Bei zwei Kandidaten ist die Lösung jedoch trivial, da dort der Gewinner der Kandidat ist, der am häufigsten, von den Wählern dem Gegner vorgezogen wurde.
+\item Es muss mindestens zwei Kandidaten geben, die sich zu Wahl stellen, da sonst keine Rangfolge erstellt werden kann. Bei zwei Kandidaten ist die Lösung jedoch trivial, da dort der Gewinner der Kandidat ist, der am häufigsten, von den Wählern dem Gegner vorgezogen wurde.
 
 Mathematische Definition:
 Sei A eine endliche nicht leere Menge an Kandidaten. Wobei die Anzahl der Kandidaten C ist und gilt: 
@@ -23,15 +23,89 @@ Des weiteren gilt:
 \item \label{itm:Regel1} Es können mehrere Kandidaten den gleichen Rang haben, dass bedeutet, dass kein Kandidat dem anderen Kandidaten auf der selben Platzierung vorgezogen wird. 
 \item Wenn ein Wähler keine Bewertung für einen Kandidaten abgibt, werden alle Kandidaten, die eine Bewertung haben, diesem Kandidaten vorgezogen. Werden mehrere Kandidaten nicht bewertet, werden sie wir im vorherigen Punkt bewertet.
 \end{enumerate}
-
-
-
 \end{enumerate}
 
+\subsection{Begriffsdefinition und Erläuterungen } 
+\label{sec:begriffsdefinition}
+
+Bevor die Theoretische Definition aufgestellt werden kann müssen einige Begriffe, Formeln und Notationen besprochen werden, um die Definition einfacher zu verstehen.
+
+
+\subsubsection{Verbindung}
+\label{verbindung}
+Eine Verbindung in diesem Kontext bedeutet, dass zwei Kandidaten gegeneinander antreten und diese Duell ist eine Verbindung mit folgender Notation
+
+\[
+(N[a,b],N[b,a])
+\]
+\textbf{Beispiel:}
+Kandidat a wird von fünf Wählern dem Kandidaten b bevorzugt, und Kandidat b wird von zwei Wählern Kandidat a vorgezogen, würde wie folgt Notiert werden. 
+\[
+(5,2)
+\]
+
+\subsubsection{Weg}
+\label{weg}
+
+\subsubsection{Relation}
+\label{relation}
+
+\subsubsection{Die Menge N}
+\label{mengeN}
+
+
+\subsubsection{$\textsubscript{D}z$}
+\label{dz}
+
+\subsubsection{$P_{D}$}
+\label{PD}
 
 \subsection{Theoretische Grundlagen} 
 \label{sec:theoretische Grundlagen}
-Welche mathematische Berechnung wird zur Lösung dieses Problems eingesetzt? Welche Theorie wurde entwickelt
+
+Die grundsätzliche Idee der Schulze Methode ist es, dass Condorectes Verfahren, also ein Duell von Kandidat A gegen Kandidat B, einzusetzen. Hierbei wird das Verfahren jedoch erweitert, indem die Werte für die Duelle erst mit der Schulze Methode ermittelt werden.
+
+In diesem Abschnitt werden die Theoretischen Grundlagen erläutert und in den Abschnitten \ref{sec:beispiel1} und  \ref{sec:beispielzwei} ein Beispielen erläutert.
+
+\begin{defi}
+Ein Weg von Kandidat $x \in A$ zu Kandidat $y \in A$ ist eine folgen von Kandidaten $c(1),...,c(n) \in A$ mit den folgenden Eigenschaften:
+
+\begin{center}
+
+\begin{enumerate}
+\item $x \equiv c(1)$
+\item $y \equiv c(n)$
+\item $2 \leq n \leq \infty$
+\item For all $ i = 1,...,(n-1): c(i) \not\equiv c(i+1)$
+\end{enumerate}
+\end{center}
+
+Die Stärke eines Weges $c(1),...,c(n)$ ist $ min\textsubscript{D} \{(N[c(i),c(i+1)],N[c(i+1),c(i)])| i=1,...,n-1\} $.
+
+In anderen Worten: Die Stärke eines Weges ist die Stärke der schwächsten Verbindung.
+
+Wenn ein Weg $c(1),..,c(n)$ die Stärke $z \in  \mathbb{N}_{0} \times \mathbb{N}_{0}$ hat, dann ist die kritische Verbindung dieses Weges, die Verbindung von  $(N[c(i),c(i+1)],N[c(i+1),c(i)]) \approx \textsubscript{D}z$.
+
+\begin{align}
+P_{D}[a,b] := max\textsubscript{D}\{ min\textsubscript{D} \{(N[c(i),c(i+1)],N[c(i+1),c(i)])| i=1,...,n-1\} \nonumber \\
+     |c(1),...,c(n) \text{ ein Weg von Kandidat a zu Kandidat b}\} \nonumber
+\end{align}
+
+In andere Worten: $P_{D}[a,b] \in \mathbb{N}_{0} \times \mathbb{N}_{0}$ ist die Stärke des stärksten Weges von Kandidat $a \in A$ zu Kandidat $b \in A$.
+
+Die zweistellige Relation $\mathcal{O}$ auf $A$ ist wie folgt definiert:
+\[
+ab \in \mathcal{O} : \Leftrightarrow P_{D}[a,b]>_{D}P_{D}[b,a]
+\]
+
+Daraus folgt, dass die Menge der Sieger sich wie folgt ergibt:
+
+\[
+\mathcal{S} := \{ a \in A | \forall b \in A \ \{a\}: ba \not\in \mathcal{O} \}
+\]
+
+
+\end{defi}
 
 
 
