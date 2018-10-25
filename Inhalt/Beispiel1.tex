@@ -5,12 +5,131 @@
 
 \subsection{Ausgangssituation} 
 \label{sec:ausgangssituation1}
-Welche Daten sind Vorhanden 
+Im ersten Beispiel wird zuerst eine Wahl untersucht, in der jeder Teilnehmer alle Kandidaten bewertet hat und damit eine eindeutige Reihenfolge der Kandidaten generiert werden kann. Kein Kandidat wurde gleich behandelt oder nicht bewertet.
 
+Daher ergibt sich Folgende Ausgangssituation:
+Ein Kurs von 28 Studierenden wählt einen Kurssprecher. Zur Wahl stellt sich Anton (Kandidat A), Berta (Kandidatin B), Conny (Kandidatin C) und Dennis (Kandidat D).
+
+Jeder der 28 Studierenden muss die Kandidaten nach Erst-, Zweit-, Dritt- und Viertwunsch ordnen. Nach der Auszählung hat sich Folgende Situation eingespielt. 
+
+\begin{description}
+\centering
+\item[6 mal] $a \succ_{v} b \succ_{v} d \succ_{v}c$
+\item[4 mal] $c \succ_{v} a \succ_{v} b \succ_{v}d$
+\item[10 mal] $b \succ_{v} d \succ_{v} a \succ_{v}c$
+\item[3 mal] $b \succ_{v} a \succ_{v} d \succ_{v}c$
+\item[5 mal] $d \succ_{v} c \succ_{v} b \succ_{v}a$
+\end{description}
+
+Dies bedeutet Beispielhaft für die erste Zeile, dass sechs mal Wahlzettel abgegeben wurden die Anton als Erstwunsch, Berta als Zweitwunsch, Dennis als Drittwunsch und Conny als Viertwunsch angegeben haben.
+
+Dieses Ergebnis der Wahl wird nun in die Schulze Methode überführt und bewertet.
 
 \subsection{Lösungsschritte} 
 \label{sec:loesungen1}
-Bilder Tabellen um zur Lösung zu gelangen. Auch Mathematisch
+Um mit die Schulze Methode anzuwenden, müssen wir zuerst die Menge $N$ bestimmen. Diese Menge erhält man, Indem man Jeden Kandidaten gegen jeden Kandidaten antreten lässt.
+
+Zuerst muss man alle möglichen Duelle aufstellen und untersuchen, welcher Kandidat wie viele Stimmen erhält.
+
+Exemplarisch wird das Duell $a$ gegen $b$ durchgeführt und die Kandidaten $c$ und $d$ ignoriert. Es können diese Kandidaten im Duell ignoriert werden, da es irrelevant ist, wo das Duell stattfindet, ob die beiden Kandidaten Dritt- und Viertwunsch sind oder ein Kandidat Erstwunsch und der andere Zweitwunsch ist. Diese Betrachtung wird in das Verfahren mit aufgenommen, indem alle Kandidaten gegeneinander antreten.
+
+\begin{description}
+\centering
+\item[6 mal] $a \succ_{v} b$
+\item[4 mal] $a \succ_{v} b$
+\item[10 mal] $b \succ_{v} a$
+\item[3 mal] $b \succ_{v} a$
+\item[5 mal] $b \succ_{v}a$
+\end{description}
+
+Wird nun dieses Duell betrachte, erhalten Kandidat $a$ 10 Stimmen und Kandidat $b$ 18 Stimmen und Kandidat $b$ gewinnt damit.
+
+
+Wenn man dies für alle Duelle macht erhält man diese Auflistung.
+ \begin{description}
+ \centering
+ \item[$a$ vs. $b$] 10 Stimmen gegen 18 Stimmen, $b$ gewinnt
+ \item[$a$ vs. $c$] 19 Stimmen gegen 9 Stimmen, $a$ gewinnt
+ \item[$a$ vs. $d$] 13 Stimmen gegen 15 Stimmen, $d$ gewinnt
+ \item[$b$ vs. $c$] 19 Stimmen gegen 9 Stimmen, $b$ gewinnt
+ \item[$b$ vs. $d$] 23 Stimmen gegen 5 Stimmen, $b$ gewinnt
+ \item[$c$ vs. $d$] 4 Stimmen gegen 24 Stimmen, $d$ gewinnt
+ \end{description}
+ 
+ Mit diesen Werten kann man nun die Menge $N$, wie in Tabelle \ref{Beispie1_N} zu sehen, aufstellen.
+
+\input{Tabellen/Tabelle1}
+
+Im nächsten Schritt müssen die Wege zwischen den Kandidaten gesucht werden, wie es in der Definition \ref{itm:def231} beschreiben wird. Zyklische Verbindungen sind nicht erlaubt.
+
+In Abbildung \ref{fig:graph1} ist die Menge $N$ als gerichteter Graph aufgezeichnet.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{Bilder/Beispiel1_Graph.png}
+\caption{Graph über die Menge $N$}
+\label{fig:graph1}
+\end{figure}
+
+In den Graph wurden gerichtete Kanten vom Sieger in die Richtung des Verlierers gezogen und das Kantengewicht des Siegers der Duelle aufgetragen. Nun muss \ref{itm:def232} (2.3.2) und \ref{itm:def233} (2.3.3) angewendet werden, um die Menge $P$ zu bilden, die die Stärksten Wege beinhaltet.
+
+Dazu werden nun alle Wege zwischen den Kandidaten gebildet und der stärkste Weg, das ist jener, bei dem die schwächste Verbindung am größten ist, ausgewählt für die Menge $P$.
+
+\begin{description}
+\item[$a \to b$:] Es gibt keinen Weg, der von $a$ nach $b$ führt.
+
+\item[$b \to a$:] Es gibt zwei Wege die von $b$ nach $a$ führen.
+	\begin{description}
+	\item[Weg 1:] $b$, 23, $d$, 15, $a$, der die Stärke $min_{D}\{23, 15 \}\approx_{D}15$ hat.
+	\item[Weg 2:] $b$, 18, $a$, der die Stärke 18 hat.
+	\end{description}
+	Damit ist ergibt sich die Stärke des stärksten Weges mit Hilfe von $max_{D}\{15, 18\}\approx_{D}18$
+	
+\item[$a \to c$] Es gibt einen Weg, der von $a$ nach $c$ führt.
+	\begin{description}
+	\item[Weg 1:] $a$, 19, $c$, der die Stärke 19 hat.
+	\end{description}
+	Damit ist die Stärke des stärksten Weges auch 19.
+	
+\item[$c \to a$] Es gibt keinen Weg, der von $c$ nach $a$ führt.
+
+\item[$a \to d$] Es gibt keinen Weg, der von $a$ nach $d$ führt.
+
+\item[$d \to a$] Es gibt einen Weg, der von $d$ nach $a$ führt.
+	\begin{description}
+	\item[Weg 1:] $d$, 15, $a$, der die Stärke 15 hat.
+	\end{description}
+	Damit ist die Stärke des stärksten Weges auch 15.
+	
+\item[$b \to c$:] Es gibt drei Wege die von $b$ nach $c$ führen.
+	\begin{description}
+	\item[Weg 1:] $b$, 18, $a$, 19, $c$, der die Stärke $min_{D}\{18, 19 \}\approx_{D}18$ hat.
+	\item[Weg 2:] $b$, 19, $c$, der die Stärke 19 hat.
+	\item[Weg 3:] $b$, 23, $d$, 24, $c$, der die Stärke $min_{D}\{23, 24 \}\approx_{D}23$ hat.
+	\end{description}
+	Damit ist ergibt sich die Stärke des stärksten Weges mit Hilfe von $max_{D}\{18, 19, 23 \}\approx_{D}23$
+	
+\item[$c \to b$] Es gibt keinen Weg, der von $c$ nach $b$ führt.
+
+\item[$b \to d$] Es gibt einen Weg, der von $b$ nach $d$ führt.
+	\begin{description}
+	\item[Weg 1:] $b$, 23, $d$, der die Stärke 23 hat.
+	\end{description}
+	Damit ist die Stärke des stärksten Weges auch 23.
+	
+\item[$d \to b$] Es gibt keinen Weg, der von $d$ nach $b$ führt.
+
+\item[$c \to d$] Es gibt keinen Weg, der von $c$ nach $d$ führt.
+	
+\item[$d \to c$] Es gibt einen Weg, der von $d$ nach $c$ führt.
+	\begin{description}
+	\item[Weg 1:] $d$, 24, $c$, der die Stärke 24 hat.
+	\end{description}
+	Damit ist die Stärke des stärksten Weges auch 24.	
+\end{description}
+
+So wurden alle Wege bestimmt und die Kritischen Verbindungen rausgesucht sodass sich in Tabelle ?? die menge $P$ bildet.
+
 
 \subsection{Ergebnis} 
 \label{sec:ergebnis1}
