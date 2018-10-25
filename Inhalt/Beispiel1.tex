@@ -128,11 +128,40 @@ Dazu werden nun alle Wege zwischen den Kandidaten gebildet und der stärkste Weg
 	Damit ist die Stärke des stärksten Weges auch 24.	
 \end{description}
 
-So wurden alle Wege bestimmt und die Kritischen Verbindungen rausgesucht sodass sich in Tabelle ?? die menge $P$ bildet.
+So wurden alle Wege bestimmt und die kritischen Verbindungen gefunden, sodass sich in Tabelle \ref{beispiel1p} die menge $P$ bildet.
 
+\input{Tabellen/Tabelle_beispiel1_p}
+
+Nun lässt lässt man wieder die Kandidaten gegeneinander antreten dieses mal über die Menge $P$. Wenn es keinen Weg zwischen den Kandidaten gibt, also in der Tabelle ein '---' steht, so wird diese Verbindung als die Stärke 0 betrachtet.
+
+Dieses Ergebnis wird in der Relation $\mathcal{O}$, wie in der Definition (2.3.4) \ref{itm:def234} beschreiben.
+
+\begin{description}
+\item[$a$ gewinnt gegen $b$]: nein, daher kein Teil von $\mathcal{O}$ 
+\item[$a$ gewinnt gegen $c$]: ja, daher Teil von $\mathcal{O}$ 
+\item[$a$ gewinnt gegen $d$]: nein, daher kein Teil von $\mathcal{O}$ 
+\item[$b$ gewinnt gegen $a$]: ja, daher Teil von $\mathcal{O}$ 
+\item[$b$ gewinnt gegen $c$]: ja, daher Teil von $\mathcal{O}$ 
+\item[$b$ gewinnt gegen $d$]: ja, daher Teil von $\mathcal{O}$ 
+\item[$c$ gewinnt gegen $a$]: nein, daher nicht Teil von $\mathcal{O}$ 
+\item[$c$ gewinnt gegen $b$]: nein, daher nicht Teil von $\mathcal{O}$ 
+\item[$c$ gewinnt gegen $d$]: nein, daher nicht Teil von $\mathcal{O}$ 
+\item[$d$ gewinnt gegen $a$]: ja, daher Teil von $\mathcal{O}$ 
+\item[$d$ gewinnt gegen $b$]: nein, daher nicht Teil von $\mathcal{O}$ 
+\item[$d$ gewinnt gegen $c$]: ja, daher Teil von $\mathcal{O}$ 
+\end{description} 
+
+Daher ergibt sich $\mathcal{O} = \{ ac,ba,bc,bd,da,dc \}$
 
 \subsection{Ergebnis} 
 \label{sec:ergebnis1}
-Welches Erkenntnis haben wir gezogen.
+Um den Sieger aus der Relation $\mathcal{O}$ zu finden muss wie in der Definition (2.3.5) \ref{itm:def235} sichergestellt werden, das ein Sieger nie durch einen anderen Gegner geschlagen wird.
+
+Um das zu prüfen, wird die Relation $\mathcal{O}$ durchgegangen und geprüft, ob es einen Kandidaten gibt, der immer nur auf der linken Seite eine Tupel z.B: ''bd'' steht und damit immer der Gewinner ist und nie geschlagen wurde, dann würde er auf der rechten Seite des Tupels stehen.
+
+Für dieses Beispiel ergibt sich, das es nur einen Sieger in der Menge $\mathcal{S}=\{d\}$ gibt, den Kandidaten b. Damit haben wir nach der Schulze Methode festgestellt, dass Kandidatin Berta die Wahl gewonnen hat.
+
+Zu Beginn des Beispiels konnte man sehen, dass Kandidatin Berta beim Duell mit den anderen Kandidaten gegen alle anderen Kandidaten gewonnen hat. Und die Frage stellen, wieso nicht an dieser Stelle schon die Siegerin festgelegt wurde? In dem Fall hat dieses Beispiel gezeigt, das die Schulze Methode das Condorect Kriterium \ref{sec:condorectKriterium} erfüllt, das besagt, dass ein Kandidat, der gegen alle Gegner gewonnen hat auch der Sieger der Schulze Methode sein muss. Das Beispiel 2 \ref{sec:beispiel2} zeigt, dass auch wenn kein Condorect Sieger existiert, ein Sieger mit der Schulze Methode ermittelt werden kann.
+
 
 
