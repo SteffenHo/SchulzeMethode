@@ -60,7 +60,7 @@ c(1),...,c(2)
 
 \subsubsection{Die Menge N}
 \label{mengeN}
-Die Menge Na kann man sich als Tabelle Vorstellen in der die Ergebnisse der Duelle der Kandidaten vorhanden sind. Ein Beispiel hierfür findet man im Beispiel 1. Hier Verweis einfügen.
+Die Menge $N$ kann man sich als Tabelle Vorstellen in der die Ergebnisse der Duelle der Kandidaten enthalten sind. Ein Beispiel hierfür findet man im Beispiel 1. Hier Verweis einfügen.
 
 
 \subsubsection{$\textsubscript{D}z$}
@@ -80,11 +80,16 @@ Die grundsätzliche Idee der Schulze Methode ist es, dass Condorectes Verfahren,
 
 In diesem Abschnitt werden die Theoretischen Grundlagen erläutert und in den Abschnitten \ref{sec:beispiel1} und  \ref{sec:beispielzwei} ein Beispielen erläutert.
 
-\begin{defi}
-Ein Weg von Kandidat $x \in A$ zu Kandidat $y \in A$ ist eine folgen von Kandidaten $c(1),...,c(n) \in A$ mit den folgenden Eigenschaften:
+
+\def\namedlabel#1#2{\begingroup
+    #2%
+    \def\@currentlabel{#2}%
+    \phantomsection\label{#1}\endgroup
+}
+\begin{description}
+\item[\namedlabel{itm:def231}{$(2.3.1)$}] Ein Weg von Kandidat $x \in A$ zu Kandidat $y \in A$ ist eine folgen von Kandidaten $c(1),...,c(n) \in A$ mit den folgenden Eigenschaften:
 
 \begin{center}
-
 \begin{enumerate}
 \item $x \equiv c(1)$
 \item $y \equiv c(n)$
@@ -93,10 +98,13 @@ Ein Weg von Kandidat $x \in A$ zu Kandidat $y \in A$ ist eine folgen von Kandida
 \end{enumerate}
 \end{center}
 
+
+\item[\namedlabel{itm:def232}{$(2.3.2)$}]
 Die Stärke eines Weges $c(1),...,c(n)$ ist $ min\textsubscript{D} \{(N[c(i),c(i+1)],N[c(i+1),c(i)])| i=1,...,n-1\} $.
 
 In anderen Worten: Die Stärke eines Weges ist die Stärke der schwächsten Verbindung.
 
+\item[\namedlabel{itm:def233}{$(2.3.3)$}]
 Wenn ein Weg $c(1),..,c(n)$ die Stärke $z \in  \mathbb{N}_{0} \times \mathbb{N}_{0}$ hat, dann ist die kritische Verbindung dieses Weges, die Verbindung von  $(N[c(i),c(i+1)],N[c(i+1),c(i)]) \approx \textsubscript{D}z$.
 
 \begin{align}
@@ -106,19 +114,18 @@ P_{D}[a,b] := max\textsubscript{D}\{ min\textsubscript{D} \{(N[c(i),c(i+1)],N[c(
 
 In andere Worten: $P_{D}[a,b] \in \mathbb{N}_{0} \times \mathbb{N}_{0}$ ist die Stärke des stärksten Weges von Kandidat $a \in A$ zu Kandidat $b \in A$.
 
-Die zweistellige Relation $\mathcal{O}$ auf $A$ ist wie folgt definiert:
+\item[\namedlabel{itm:def234}{$(2.3.4)$}]Die zweistellige Relation $\mathcal{O}$ auf $A$ ist wie folgt definiert:
 \[
 ab \in \mathcal{O} : \Leftrightarrow P_{D}[a,b]>_{D}P_{D}[b,a]
 \]
 
-Daraus folgt, dass die Menge der Sieger sich wie folgt ergibt:
+\item[\namedlabel{itm:def235}{$(2.3.5)$}] Daraus folgt, dass die Menge der Sieger sich wie folgt ergibt:
 
 \[
 \mathcal{S} := \{ a \in A | \forall b \in A \ \{a\}: ba \not\in \mathcal{O} \}
 \]
 
-
-\end{defi}
+\end{description}
 
 
 
