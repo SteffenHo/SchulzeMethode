@@ -46,6 +46,23 @@ In Abbildung \ref{fig:graph3} sieht man den Graphen, der aus der Menge $N$ gebil
 \label{fig:graph3}
 \end{figure}
 
+Nun gibt es vier Möglichkeiten einen Gewinner mit der \schulze zu finden. Wenn alle Wähler die Kandidaten in eine strikte Order gebracht haben, dann geben diese Methoden immer das selbe Ergebnis. Dieses Beispiel ist so aufgebaut, dass jede Methode einen anderen Kandidaten als Sieger ausgibt. Daher ist es wichtig vor der Wahl zu definieren, welche Wahlmethode genutzt wird.
+
+\subsubsection[a]{margin}
+\label{sec:margin}
+Beim Ansatz $margin$ gewinnt der Kandidat, der seinen Sieg mit einem größeren Abstand erreicht. 
+Untersucht wir Beispielhaft das Duell $a$ gegen $b$. Der Stärkste Weg von $a$ nach $b$, ist die direkt Verbindung, Kandidat $a$ erhält 67 Stimmen und Kandidat $b$ nur 55 Stimmen und damit gewinnt Kandidat $a$ mit 12 Stimmen Vorsprung. 
+Aber auch Kandidat $b$ kann Kandidat $a$ schlagen, der Stärkste Weg für dieses Duell ist von $b$ über $c$ und $d$ nach $a$. Die schwächste Verbindung in diesem Weg ist die Verbindung $d$ nach $a$, da dort mit nur 10 Stimmen Vorsprung der Kandidat $d$, Kandidat $a$ schlägt.
+Um den Gewinner Festzustellen vergleicht man nun den Abstand für den Sieg von $a$ (12 Stimmen)mit dem Sieg von $b$ (10 Stimmen) und erhält damit den Gewinner dieses Duells $a$.
+
+Auch hier wurde in Tabelle \ref{beispiel3margin_p} die Menge $P$ aufgestellt. Die werte in der Tabelle zeigen nun den Abstand, mit dem der Kandidat den Gegner geschlagen hat.
+
+\input{Tabellen/beispiel3margin_p}
+
+Anschließend wird mit den Werten der Menge $P$ die neu Zweikampfsituation erstellt und man erhält die Relation $\mathcal{O}_{margin} = \{ ab, ac,ad,bc,bd,cd \}$
+
+Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{margin} \in \{ a\}$ und er Sieger unter Berücksichtigung des Abstandes ist Kandidat $a$.
+
 \subsection{Ergebnis} 
 \label{sec:ergebnis3}
 
