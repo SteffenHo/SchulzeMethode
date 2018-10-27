@@ -2,12 +2,9 @@
 \section{Bewertung Algorithmus}
 \label{sec:Bewertung2}
 
-Wie lange bruahct der Algorithmus?
-Welche Laufzeitkomplexität?
-Fehler?
-Ergebnisse aus Implementierung
+Die Laufzeitkomplexität der \schulze ist mit $O(C^3)$ nicht besonders gut, wobei C die Anzahl der Kandidaten ist. Diese Komplexität sieht man auch in der Implementierung in Abschnitt \ref{sec:implementierung}, da wird über ein Array mit einer dreifach verschachtelten Schleife iteriert. Jedoch ist die Laufzeit zu relativieren, da diese Methode zum auswerten einer Wahl nur ein Mahle laufen muss, um ein Ergebnis zu liefern.
 
-
+Auch wird die Zahl der Kandidaten meist nicht ins unendliche laufen, da es meist eine endlich oft recht begrenzte Anzahl von Kandidaten gibt. Trotzdem muss man die Komplexität beachten, wenn man sie in Systeme einbaut, die nicht eine klassische Abstimmung von Kandidaten wie es z.B. bei Partei darstellt.
 
 
 
