@@ -1,7 +1,22 @@
 % !TEX root = ../Projektdokumentation.tex
 \section{Bewertung der Methode}
-\label{sec:bewertung1}
+\label{sec:Bewertung1}
 
-Bewertung auf Basis der sozialen Fragen, Anforderungen an Wahlalgorithmen.
+Die Nachfolgende Tabelle \ref{schulzeKramer} zeigt die \schulze im Vergleich zur Simpson-Kramer Methode, die in Abschnitt \ref{sec:alternativeAlgorithmen} erläutert wird. Sie zeigt in welchen Kriterien die \schulze und die Simpson-Kramer Methode Kriterien der Sozialwahltheorie erfüllen. Ein Ausschnitt der Bedingungen wurde in Abschnitt \ref{sec:problemstellung} beschrieben, eine vollständige ausführung aller Kriterien kann man natürlich in der Ausarbeitung von Martin Schulze nachlesen \citep{Schulze2018}.
 
+\input{Tabellen/schulzeKramer}
 
+Bei der Tabelle wir deutlich, dass es auch die \schulze nicht schafft alle Kriterien zu erfüllen jedoch vielen Anforderungen bestand hält, die andere Methoden nicht erfüllen. 
+
+\subsection{Eindeutigkeit}
+\label{sec:eindeutigkeit}
+Die \schulze wurde als eine Methode vorgestellt die einen Sieger ermittelt. Jedoch ist das nicht ganz richtig. Es kann auch vorkommen, dass zwei Sieger gefunden werden. Wenn man eine Situation wie diese
+
+\begin{description}
+\centering
+\item[3 mal] $a \succ_{v} b \succ_{v} c \succ_{v}d$
+\item[2 mal] $c \succ_{v} b \succ_{v} d \succ_{v}a$
+\item[2 mal] $d \succ_{v} a \succ_{v} b \succ_{v}c$
+\item[2 mal] $d \succ_{v} b \succ_{v} c \succ_{v}a$
+\end{description} 
+untersucht, erhält man nicht einen Sieger sondern zwei, $\mathcal{S}=\{b,d\}$. Die \schulze bietet keine Möglichkeit einen eindeutigen Sieger in dieser Situation zu ermitteln. In diesen Fällen wird geraten eine Stichwahl zwischen den Kandidaten zu machen.
