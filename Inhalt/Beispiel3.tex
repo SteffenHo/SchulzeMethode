@@ -4,7 +4,7 @@
 
 \subsection{Ausgangssituation} 
 \label{sec:ausgangssituation3}
-Wie in Abschnitt \ref{sec:voraussetzungen} beschrieben, liefert die Schulze Methode auch Ergebnisse, wenn Kandidaten gleich bewertet wurden oder nicht bewertet wurden. Nicht bewertete Kandidaten werden dabei behandelt, als wären sie alle vom Wähler auf dem letzten Platz gewählt worden, sodass jeder Kandidat, der vom Wähler bewertet wurde, den nicht bewerteten Kandidaten vorgezogen wird.
+In Abschnitt \ref{sec:voraussetzungen} wurde beschrieben, dass die Schulze Methode auch Ergebnisse liefert, wenn Kandidaten gleich oder nicht bewertet wurden. Nicht bewertete Kandidaten werden dabei behandelt, als wären sie alle vom Wähler auf dem letzten Platz gewählt worden, sodass jeder Kandidat, der vom Wähler bewertet wurde, den nicht bewerteten Kandidaten vorgezogen wird. Diese Beispiel Bezieht sich auf das sechste Beispiel von Martin Schulze in Kapitel 3.6 \citep{Schulze2017}.
 
 \begin{description}
 \centering
@@ -22,22 +22,22 @@ Wie in Abschnitt \ref{sec:voraussetzungen} beschrieben, liefert die Schulze Meth
 \item[4 mal] $d \succ_{v} c \succ_{v} a \succ_{v}b$
 \end{description}
 
-Zur erläuterung betrachten wir einmal die Wahl $a \approx_{v} b \succ_{v} c \approx_{v}d$. Hier hat der Kandidat gesagt er möchte lieber Kandidat $a$ oder $b$ welcher ist ihm dabei egal, aber lieber einen von den Kandidaten als die Kandidaten $b$ oder $d$. Dort macht der Wähler aber auch kein Unterschied ob $b$ oder $d$ beide findet er gleich gut/schlecht.
+Zur Erläuterung wir die Wahl $a \approx_{v} b \succ_{v} c \approx_{v}d$ betrachtet. Hier hat der Wähler gesagt, er möchte lieber Kandidat $a$ oder $b$ haben, welcher ist ihm dabei egal, aber lieber einen von den beiden Kandidaten, als die Kandidaten $b$ oder $d$. Dort macht der Wähler aber auch kein Unterschied ob $b$ oder $d$ beide findet er gleich gut/schlecht.
 
 \subsection{Lösungsschritte} 
 \label{sec:loesungen3}
-Nun muss man als nächstes wieder die Menge $N$ bestimmen, in den man die Kandidaten gegeneinander antreten lässt nur kann es diesmal zu Duellen ohne Sieger kommen, da beide gleich bewertet wurden. Diese Duelle werden dann nicht Berücksichtigt. 
+Als erstes muss die Menge $N$ bestimmen werde, in den man die Kandidaten gegeneinander antreten lässt, nur kann es diesmal zu Duellen ohne Sieger kommen, da beide gleich bewertet wurden. Diese Stimmen werden dann nicht Berücksichtigt. 
 
 Exemplarisch wird in Tabelle \ref{beispiel3ab} das Duell von Kandidat $a$ gegen Kandidat $b$ dargestellt. 
 
 \input{Tabellen/beispiel3_ab}
 
 
-Wenn man dieses Verfahren für alle Kandidaten anwendet erhält man die Menge $N$ die in Tabelle \ref{beispiel3N} aufgetragen ist.
+Wenn man dieses Verfahren für alle Kandidaten anwendet erhält man die Menge $N$, die in Tabelle \ref{beispiel3N} aufgetragen ist.
 
 \input{Tabellen/beispiel3_n}
 
-In Abbildung \ref{fig:graph3} sieht man den Graphen, der aus der Menge $N$ gebildet wurde, er sieht etwas anders aus als in Beispiel 1 und Beispiel 2, da wir hier nicht nur den Wert brachen von Kandidat $a$ nach Kandidat $b$, sondern auch den umgekehrten Weg von $b$ nach $a$. Die Werte müssen so gelesen werden, dass der erste Wert, der größere, den Sieg des Kandidaten gegen den Kandidaten auf dem die Pfeilspitze zeigt, darstellt.
+In Abbildung \ref{fig:graph3} sieht man den Graphen, der aus der Menge $N$ gebildet wurde, er sieht etwas anders aus als in Beispiel 1 und Beispiel 2, da der Wert für den Weg von Kandidat $a$ nach Kandidat $b$, sondern auch den umgekehrten Weg von $b$ nach $a$ benötigt wird. Die Werte müssen so gelesen werden, dass der erste Wert, der größere, den Sieg des Kandidaten gegen den Kandidaten auf dem die Pfeilspitze zeigt, darstellt.
 
 \begin{figure}[!h]
 \centering
@@ -46,30 +46,31 @@ In Abbildung \ref{fig:graph3} sieht man den Graphen, der aus der Menge $N$ gebil
 \label{fig:graph3}
 \end{figure}
 
-Nun gibt es vier Möglichkeiten einen Gewinner mit der \schulze zu finden. Wenn alle Wähler die Kandidaten in eine strikte Order gebracht haben, dann geben diese Methoden immer das selbe Ergebnis. Dieses Beispiel ist so aufgebaut, dass jede Methode einen anderen Kandidaten als Sieger ausgibt. Daher ist es wichtig vor der Wahl zu definieren, welche Wahlmethode genutzt wird.
+Es gibt vier Möglichkeiten einen Gewinner mit der \schulze zu finden. Wenn alle Wähler die Kandidaten in eine strikte Ordnung gebracht haben, dann geben diese Methoden immer das selbe Ergebnis. Dieses Beispiel ist so aufgebaut, dass jede Methode einen anderen Kandidaten als Sieger ausgibt. Daher ist es wichtig vor der Wahl zu definieren, welche Wahlmethode genutzt wird.
 
 \subsubsection[a]{margin}
 \label{sec:margin}
 Beim Ansatz $margin$ gewinnt der Kandidat, der seinen Sieg mit einem größeren Abstand erreicht. 
 Untersucht wir Beispielhaft das Duell $a$ gegen $b$. Der Stärkste Weg von $a$ nach $b$, ist die direkt Verbindung, Kandidat $a$ erhält 67 Stimmen und Kandidat $b$ nur 55 Stimmen und damit gewinnt Kandidat $a$ mit 12 Stimmen Vorsprung. 
 Aber auch Kandidat $b$ kann Kandidat $a$ schlagen, der Stärkste Weg für dieses Duell ist von $b$ über $c$ und $d$ nach $a$. Die schwächste Verbindung in diesem Weg ist die Verbindung $d$ nach $a$, da dort mit nur 10 Stimmen Vorsprung der Kandidat $d$, Kandidat $a$ schlägt.
-Um den Gewinner Festzustellen vergleicht man nun den Abstand für den Sieg von $a$ (12 Stimmen)mit dem Sieg von $b$ (10 Stimmen) und erhält damit den Gewinner dieses Duells $a$.
+Um den Gewinner festzustellen wird der Abstand für den Sieg von $a$ (12 Stimmen)mit dem Sieg von $b$ (10 Stimmen) verglichen und der Gewinner dieses Duells ist $a$, mit zwei Stimmen Vorsprung.
 
-Auch hier wurde in Tabelle \ref{beispiel3margin_p} die Menge $P$ aufgestellt. Die werte in der Tabelle zeigen nun den Abstand, mit dem der Kandidat den Gegner geschlagen hat.
+Auch hier wurde in Tabelle \ref{beispiel3margin_p} die Menge $P$ aufgestellt. Die Werte in der Tabelle zeigen nun den Abstand, mit dem der Kandidat den Gegner geschlagen hat.
 
 \input{Tabellen/beispiel3margin_p}
 
+\newpage
 Anschließend wird mit den Werten der Menge $P$ die neu Zweikampfsituation erstellt und man erhält die Relation $\mathcal{O}_{margin} = \{ ab, ac,ad,bc,bd,cd \}$
 
 Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{margin} \in \{ a\}$ und er Sieger unter Berücksichtigung des Abstandes ist Kandidat $a$.
 
 \subsubsection[a]{ratio}
 \label{sec:ratio}
-Eine weitere Methode die eingesetzt wird um einen Sieger zu erhalten ist ein Verhältnis ( eng: ratio) zu ermitteln. Hierzu werden die Stimmen für den Sieger durch die Stimmen gegen den Sieger geteilt und damit das Verhältnis ausgerechnet, mit dem der Sieger gewonnen hat.
+Eine weitere Methode die eingesetzt wird, um einen Sieger zu erhalten ist ein Verhältnis ( eng: ratio) zu ermitteln. Hierzu werden die Stimmen für den Sieger durch die Stimmen gegen den Sieger geteilt und damit das Verhältnis ausgerechnet, mit dem der Sieger gewonnen hat.
 
-Beispielhaft wird wieder das Duelle von Kandidat $a$ gegen Kandidat $b$ angeschaut. Im Duell $a$ gegen $b$ ist wie im Vergleich über den Abstand (Abschnitt \ref{sec:margin}) der direkte Weg der stärkste Weg. Der Stärkste Weg von Kandidat $b$ zu Kandidat $a$ ist dieses mal aber ein anderer. ER führt von $b$ über $c$ nach $a$ . Die kritische Verbindung ist in diesem Fall die Verbindung von $c$ nach $a$, da hier ein Verhältnis von $36/26 \approx 1,286$, das kleinste Singverhältnis auf diesem Weg ist. Wenn man den Weg untersucht, der beim Vergleich mit dem Abstand (Abschnitt \ref{sec:margin}) genutzt wurde, war dort die Kritische Verbindung $d$ nach $a$, was ein Verhältnis von $ 50/40 = 1,25$ darstellt und damit eine schlechteres Verhältnis als der Weg $b$ über $c$ nach $a$ darstellt.
+Beispielhaft wird wieder das Duelle von Kandidat $a$ gegen Kandidat $b$ betrachtet. Im Duell $a$ gegen $b$ ist wie im Vergleich über den Abstand (Abschnitt \ref{sec:margin}) der direkte Weg der stärkste Weg. Der Stärkste Weg von Kandidat $b$ zu Kandidat $a$ ist im Vergleich über das Verhältnis aber ein anderer. Er führt von $b$ über $c$ nach $a$ . Die kritische Verbindung ist in diesem Fall die Verbindung von $c$ nach $a$, da hier ein Verhältnis von $36/26 \approx 1,286$, das kleinste Verhältnis auf diesem Weg darstellt. Wird der Weg von Kandidat $b$ nach $a$ aus Abschnitt \ref{sec:margin} untersucht, ist dort die Kritische Verbindung $d$ nach $a$, was ein Verhältnis von $ 50/40 = 1,25$ darstellt und damit eine schlechteres Verhältnis als der Weg $b$ über $c$ nach $a$ hat.
 
-Diese suche nach besten Verhältnissen wird wieder für alle Duelle gemacht und man erhält die in Tabelle XX dargestellte Menge $P$.
+Die Berechnung der besten Verhältnisse wird wieder für alle Duelle gemacht und  Tabelle \ref{beispiel3ratio_p} zeigt die Menge $P$ unter Betrachtung des Verhältnisse.
 
 \input{Tabellen/beispiel3ratio_p}
 
@@ -77,12 +78,12 @@ Anschließend wird mit den Werten der Menge $P$ die neu Zweikampfsituation erste
 
 Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{ratio} \in \{ b\}$ und er Sieger unter Berücksichtigung des Verhältnis ist Kandidat $b$.
 
-
+\newpage
 \subsubsection{winning votes}
 \label{sec:winningVotes}
-Es kann der Sieger aber auch als die Person gelten, die am meisten Siege hat (eng: winning votes). Dies ist auch das verfahren was In den Beispiel 1 (Abschnitt: \ref{sec:beispiel1}) und Beispiel 2 (Abschnitt: \ref{sec:beispiel2}) eingesetzt wurde. Hier wird untersucht wer der Beiden Kandidaten gewinnt. Exemplarisch tritt wieder Kandidat $a$ gegen Kandidat $b$ an. Kandidat $a$ schlägt Kandidat $b$ mit der Direkten Verbindung mit 67 Stimmen, Kandidat $b$ kann Kandidat $a$ über den Weg $b$ über $c$ und $d$ nach $a$ schlagen. JEdoch ist hier die schwächste Verbindung, die Verbindung $c$ nach $d$ mit nur 45 Stimmen.Diese Beiden Werte (Kandidat $a$: 67 Stimmen, Kandidat $b$: 45 Stimmen) vergleicht man und Kandidat $a$ gewinnt. 
+Es kann der Sieger aber auch als die Person gelten, die am meisten Siege hat (eng: winning votes). Dies ist auch das verfahren, welches in den Beispiel 1 (Abschnitt: \ref{sec:beispiel1}) und Beispiel 2 (Abschnitt: \ref{sec:beispiel2}) eingesetzt wurde. Hier wird untersucht, welcher der beiden Kandidaten gewinnt. Exemplarisch tritt wieder Kandidat $a$ gegen Kandidat $b$ an. Kandidat $a$ schlägt Kandidat $b$ mit der Direkten Verbindung mit 67 Stimmen, Kandidat $b$ kann Kandidat $a$ über den Weg $b$ über $c$ und $d$ nach $a$ schlagen. Jedoch ist hier die schwächste Verbindung, die Verbindung $c$ nach $d$ mit nur 45 Stimmen. Diese Werte (Kandidat $a$: 67 Stimmen, Kandidat $b$: 45 Stimmen) werden verglichen und Kandidat $a$ gewinnt. 
 
-Diese Untersuchung macht man nun wieder für alle Duelle und erhält die in Tabelle \ref{beispiel3win_p} dargestellte Menge $P$.
+Diese Untersuchung wird für alle Duelle gemacht und es ergibt sich die in Tabelle \ref{beispiel3win_p} dargestellte Menge $P$.
 
 \input{Tabellen/beispiel3win_p}
 
@@ -111,6 +112,7 @@ Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{los} \in \{c\}$ und er Sieger
 
 \subsection{Ergebnis} 
 \label{sec:ergebnis3}
-Dieses Beispiel zeigt, dass es schwer sein kann zu bestimmen, wann ein Kandidat einen anderen schlägt. Jede Methode ist logisch, korrekt und nachvollziehbar. Dies ist aber nur dann der Fall, wenn man den Wählern erlaubt Kandidaten auch gleich zu bewerten, wenn dies nicht erlaubt ist, ergeben alle vier Methode nach Schulze das selbe Ergebnis, sprich den selben Sieger. Daher muss beachtet werden, dass wenn man Kandidaten gleich bewerten kann vorher festgelegt ist nach welcher Methode man die Stimmen bewertet, da es sonst unter Umständen zu verschiedenen Siegern kommen kann. Dieses Beispiel wurde extra so von Herrn Schulze in seiner Ausarbeitung ''A New Monotonic, Clone-Independent,
+Dieses Beispiel zeigt, dass es schwer sein kann zu bestimmen, wann ein Kandidat einen anderen schlägt. Jede Methode ist logisch, korrekt und nachvollziehbar. Dies ist aber nur dann der Fall, wenn man den Wählern erlaubt Kandidaten auch gleich zu bewerten, wenn dies nicht erlaubt ist, ergeben alle vier Methode nach Schulze das selbe Ergebnis, sprich den selben Sieger. Daher muss beachtet werden, dass wenn man Kandidaten gleich bewerten kann, vorher festgelegt werden muss nach welcher Methode man die Stimmen bewertet, da es sonst unter Umständen zu verschiedenen Siegern kommen kann. Dieses Beispiel wurde extra so von Herrn Schulze in seiner Ausarbeitung \glqq A New Monotonic, Clone-Independent,
 Reversal Symmetric, and Condorcet-Consistent
-Single-Winner Election Method'' \citep{Schulze2017} konstruiert, dass bei jeder der Methoden unter Abschnitt \ref{sec:loesungen3} immer ein anderer Sieger als Ergebnis geliefert wird.
+Single-Winner Election Method\grqq{} \citep{Schulze2017} konstruiert, dass bei jeder der Methoden unter Abschnitt \ref{sec:loesungen3} immer ein anderer Sieger als Ergebnis geliefert wird, in der Realität kann es auch vorkommen, dass mehrere der vorgestellten Methoden die selben Sieger liefern auch wenn Kandidaten gleich bewertet wurden.
+\newpage
