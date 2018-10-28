@@ -5,13 +5,13 @@
 
 \subsection{Voraussetzungen} 
 \label{sec:voraussetzungen}
-Es gibt einige Voraussetzungen, die eine Wahl erfüllen muss, damit man die Schulze Methode auf diese Wahl anwenden kann.
+Es gibt einige Voraussetzungen, die eine Wahl erfüllen muss, damit die \schulze auf diese Wahl angewendet werden kann.
 
 \begin{enumerate}
 \item Es muss mindestens zwei Kandidaten geben, die sich zu Wahl stellen, da sonst keine Rangfolge erstellt werden kann. Bei zwei Kandidaten ist die Lösung jedoch trivial, da dort der Gewinner der Kandidat ist, der am häufigsten, von den Wählern dem Gegner vorgezogen wurde.
 
-Mathematische Definition:
-Sei A eine endliche nicht leere Menge an Kandidaten. Wobei die Anzahl der Kandidaten C ist und gilt: 
+\textbf{Mathematische Definition:}
+Sei $A$ eine endliche nicht leere Menge an Kandidaten. Wobei die Anzahl der Kandidaten $C$ ist und gilt: 
 \[
   C \in\ \mathbb{N}\  und \ 1 < C <\ \infty
 \]
@@ -44,6 +44,25 @@ Kandidat a wird von fünf Wählern dem Kandidaten b bevorzugt, und Kandidat b wi
 (5,2)
 \]
 
+In den Beispielen werden diese Duelle in einem Graph dargestellt. In einer vollständigen Schreibweise, wie in Abbildung \ref{fig:verbindung1} skizziert wird. Diese Darstellungsform wird auch in Beispiel 3 in Abschnitt \ref{sec:beispiel3} benötigt.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{Bilder/Definitionab.png}
+\caption{Verbindung in Graphen}
+\label{fig:verbindung1}
+\end{figure}
+
+In vielen Fällen, in denen es nicht möglich ist Kandidaten gleich zu bewerten, wird auch die Kurzschreibweise wie in Abbildung \ref{fig:verbindung2} genutzt. Diese Darstellung wird auch in Beispiel 1 in Abschnitt \ref{sec:beispiel1} und in Beispiel 3 in Abschnitt \ref{sec:beispiel2} genutzt, da dort nicht wichtig ist, wie viele Gegenstimmen ein Siegreicher Kandidat bekommen hat.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{Bilder/DefinitionShortab.png}
+\caption{Verbindung in Graphen, Kurzschreibweise}
+\label{fig:verbindung2}
+\end{figure}
+
+
 \subsubsection{Weg}
 \label{weg}
 Ein Weg beschreibt Verbindungen zweier Kandidaten. Diese Kandidaten können direkt Verbunden werden oder auch über andere Kandidaten laufen. Dies wird wie folgt notiert.
@@ -51,16 +70,25 @@ Ein Weg beschreibt Verbindungen zweier Kandidaten. Diese Kandidaten können dire
 c(1),...,c(2)
 \]
 
-\textbf{Beispiel:} Kandidat a schlägt Kandidat b und Kandidat b schlägt Kandidat c, dann schlägt Kandidat a auch Kandidat c, da Kandidat a, Kandidat b schlagen kann.
+\textbf{Beispiel:} Kandidat a schlägt Kandidat b und Kandidat b schlägt Kandidat c, dann schlägt Kandidat a auch Kandidat c, da Kandidat a, Kandidat b schlagen kann. Auch wenn Kandidat $a$ nicht direkt Kandidat $c$ schlagen kann. Ein solcher Weg ist in rot in Abbildung \ref{fig:weg} aufgezeichnet. 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{Bilder/Weg.png}
+\caption{Weg von $a$ über $b$ nach $c$}
+\label{fig:weg}
+\end{figure}
 
 \subsubsection{Relation}
 \label{relation}
 \glqq Seien $A$ und $B$ Mengen. Eine Teilmenge $R$ enthalten in $A \times B$ heißt (zweistellige) Relation zwischen $A$ und $B$. Gilt $A = B$, so heißt $R$ Relation auf $A$.\grqq \citep{Lang2018}
 
+Die \schulze nutzt die Relation $\mathcal{O}$ um dort die Ergebnisse der Duelle alle Kandidaten zu speichern die sich aus der Menge $P_{D}$ ergeben. Die  Relation $\mathcal{O}$ enthält dann nur die siegreichen Duelle. Ein siegreiches Duell $ab$ bedeutet, dass Kandidat $a$ gegen Kandidat $b$ gewonnen hat und ist in $\mathcal{O}$ enthalten. Die Menge $P_{D}$ wird in Abschnitt \ref{PD} erläutert.
+
 
 \subsubsection{Die Menge N}
 \label{mengeN}
-Die Menge $N$ kann man sich als Tabelle Vorstellen in der die Ergebnisse der Duelle der Kandidaten enthalten sind. Ein Beispiel hierfür findet man im Beispiel 1. Hier Verweis einfügen.
+Die Menge $N$ kann man sich als Tabelle Vorstellen in der die Ergebnisse der Duelle der Kandidaten enthalten sind. Ein Beispiel hierfür findet man im Beispiel 1 in Tabelle \ref{Beispie1_N}.
 
 
 \subsubsection{$\textsubscript{D}z$}
@@ -71,14 +99,12 @@ Der Wert $_{D}z$ eines Weges ist der Wert, der die schwächste Verbindung reprä
 \label{PD}
 Diese Menge enthält die stärksten Wege zwischen den Kandidaten. Sprich die Wege, in denen die schwächste Verbindung des Weges, stärker ist als alle anderen schwächsten Verbindungen von Wegen die vom gleichen Kandidaten ausgehen und zum gleichen Kandidaten führen.
 
-\textbf{Beispiel:} $P_{D}[a,b]$ enthält den stärksten Weg zwischen Kandidat a und Kandidat B
-
 \subsection{Theoretische Grundlagen} 
 \label{sec:theoretische Grundlagen}
 
-Die grundsätzliche Idee der Schulze Methode ist es, dass Condorectes Verfahren, also ein Duell von Kandidat A gegen Kandidat B, einzusetzen. Hierbei wird das Verfahren jedoch erweitert, indem die Werte für die Duelle erst mit der Schulze Methode ermittelt werden.
+Die grundsätzliche Idee der \schulze ist es ein condorectes Verfahren, also ein Duell von Kandidat $a$ gegen Kandidat $b$, eingesetzt wird. Hierbei wird das Verfahren jedoch erweitert, indem die Werte für die Duelle erst mit der \schulze ermittelt werden.
 
-In diesem Abschnitt werden die Theoretischen Grundlagen erläutert und in den Abschnitten \ref{sec:beispiel1} und  \ref{sec:beispielzwei} ein Beispielen erläutert.
+In diesem Abschnitt werden die Theoretischen Grundlagen erläutert und in den Abschnitten \ref{sec:beispiel1},  \ref{sec:beispiel2} und \ref{sec:beispiel3} an Beispielen erläutert.
 
 
 \def\namedlabel#1#2{\begingroup
@@ -86,8 +112,9 @@ In diesem Abschnitt werden die Theoretischen Grundlagen erläutert und in den Ab
     \def\@currentlabel{#2}%
     \phantomsection\label{#1}\endgroup
 }
+
 \begin{description}
-\item[\namedlabel{itm:def231}{$(2.3.1)$}] Ein Weg von Kandidat $x \in A$ zu Kandidat $y \in A$ ist eine folgen von Kandidaten $c(1),...,c(n) \in A$ mit den folgenden Eigenschaften:
+\item[\namedlabel{itm:def231}{$(2.3.1)$}]  Ein Weg von Kandidat $x \in A$ zu Kandidat $y \in A$ ist eine folgen von Kandidaten $c(1),...,c(n) \in A$ mit den folgenden Eigenschaften:
 
 \begin{center}
 \begin{enumerate}
@@ -118,7 +145,6 @@ In andere Worten: $P_{D}[a,b] \in \mathbb{N}_{0} \times \mathbb{N}_{0}$ ist die 
 \[
 ab \in \mathcal{O} : \Leftrightarrow P_{D}[a,b]>_{D}P_{D}[b,a]
 \]
-
 \item[\namedlabel{itm:def235}{$(2.3.5)$}] Daraus folgt, dass die Menge der Sieger sich wie folgt ergibt:
 
 \[
