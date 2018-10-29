@@ -21,9 +21,9 @@ Jeder der 28 Studierenden muss die Kandidaten nach Erst-, Zweit-, Dritt- und Vie
 \item[5 mal] $d \succ_{v} c \succ_{v} b \succ_{v}a$
 \end{description}
 
-Dies bedeutet beispielhaft für die erste Zeile, dass sechs mal Wahlzettel abgegeben wurden die Anton als Erstwunsch, Berta als Zweitwunsch, Dennis als Drittwunsch und Conny als Viertwunsch angegeben haben.
+Dies bedeutet beispielhaft für die erste Zeile, dass sechs mal Wahlzettel abgegeben wurden, die Anton als Erstwunsch, Berta als Zweitwunsch, Dennis als Drittwunsch und Conny als Viertwunsch angegeben haben.
 
-Dieses Ergebnis der Wahl wird nun in die \schulze überführt und bewertet.
+Dieses Auszählung der Wahl wird nun in die \schulze überführt und bewertet.
 \newpage
 \subsection{Lösungsschritte} 
 \label{sec:loesungen1}
@@ -43,7 +43,7 @@ Exemplarisch wird das Duell $a$ gegen $b$ durchgeführt und die Kandidaten $c$ u
 Wird nun dieses Duell betrachte, erhalten Kandidat $a$ 10 Stimmen und Kandidat $b$ 18 Stimmen und Kandidat $b$ gewinnt damit.
 
 
-Wenn man dies für alle Duelle macht erhält man diese Auflistung.
+Wenn dies für alle Duelle gemacht ergibt sich folgende Ergebnisse.
  \begin{description}
  \centering
  \item[$a$ vs. $b$] 10 Stimmen gegen 18 Stimmen, $b$ gewinnt
@@ -69,7 +69,7 @@ In Abbildung \ref{fig:graph1} ist die Menge $N$ als gerichteter Graph aufgezeich
 \label{fig:graph1}
 \end{figure}
 
-In den Graph wurden gerichtete Kanten vom Sieger in die Richtung des Verlierers gezogen und das Kantengewicht des Siegers der Duelle aufgetragen. Nun muss aus der Definition in Abschnitt \ref{itm:def233} (2.3.2) und  (2.3.3) angewendet werden, um die Menge $P$ zu bilden, die die Stärksten Wege beinhaltet.
+In den Graph wurden gerichtete Kanten vom Sieger in die Richtung des Verlierers gezogen und das Kantengewicht des Siegers der Duelle aufgetragen. Dies sind die unter Abschnitt \ref{verbindung} beschriebenen Verbindungen. Nun muss aus der Definition in Abschnitt \ref{itm:def233} (2.3.2) und  (2.3.3) angewendet werden, um die Menge $P$ zu bilden, die die Stärksten Wege beinhaltet.
 
 Dazu werden nun alle Wege zwischen den Kandidaten gebildet und der stärkste Weg, das ist jener, bei dem die schwächste Verbindung am größten ist, ausgewählt für die Menge $P$.
 
@@ -130,7 +130,7 @@ So wurden alle Wege bestimmt und die kritischen Verbindungen gefunden, sodass si
 
 \input{Tabellen/Tabelle_beispiel1_p}
 
-Nun lässt man wieder die Kandidaten gegeneinander antreten dieses mal über die Menge $P$. Wenn es keinen Weg zwischen den Kandidaten gibt, also in der Tabelle ein '---' steht, so wird diese Verbindung als die Stärke 0 betrachtet.
+Die Simulation der Duelle wird für die Kandidaten erneut gemacht, dieses mal jedoch über die Menge $P$. Wenn es keinen Weg zwischen den Kandidaten gibt, also in der Tabelle ein '---' steht, so wird diese Verbindung als eine Verbindung mit der Stärke 0 betrachtet.
 
 Dieses Ergebnis wird in der Relation $\mathcal{O}$, wie in der Definition (2.3.4) in Abschnitt \ref{itm:def234} beschreiben.
 \newpage
@@ -153,13 +153,13 @@ Daher ergibt sich $\mathcal{O} = \{ ac,ba,bc,bd,da,dc \}$
 
 \subsection{Ergebnis} 
 \label{sec:ergebnis1}
-Um den Sieger aus der Relation $\mathcal{O}$ zu finden muss wie in der Definition in Abschnitt \ref{itm:def235} Punkt (2.3.5) beschreiben, sichergestellt werden, das ein Sieger nie durch einen anderen Gegner geschlagen wird.
+Um den Sieger aus der Relation $\mathcal{O}$ zu finden muss, wie in der Definition in Abschnitt \ref{itm:def235} Punkt (2.3.5) beschreiben, sichergestellt werden, das ein Sieger nur ein Kandidat sein kann der im direkten Duell nie durch einen anderen Gegner geschlagen wird.
 
 Um das zu prüfen, wird die Relation $\mathcal{O}$ durchgegangen und geprüft, ob es einen Kandidaten gibt, der immer nur auf der linken Seite eine Tupel z.B: ''bd'' steht und damit immer der Gewinner ist und nie geschlagen wurde, dann würde er auf der rechten Seite des Tupels stehen.
 
-Für dieses Beispiel ergibt sich, das es nur einen Sieger in der Menge $\mathcal{S}=\{b\}$ gibt, den Kandidaten $b$. Damit wurde mit der \schulze festgestellt, dass Kandidatin Berta die Wahl gewonnen hat.
+Für dieses Beispiel ergibt sich, dass es nur einen Sieger in der Menge $\mathcal{S}=\{b\}$ gibt, den Kandidaten $b$. Damit wurde mit der \schulze festgestellt, dass Kandidatin Berta die Wahl gewonnen hat.
 
-Zu Beginn des Beispiels konnte man sehen, dass Kandidatin Berta beim Duell mit den anderen Kandidaten gegen alle anderen Kandidaten gewonnen hat. Und es stellt sich daher die Frage, wieso nicht an dieser Stelle schon die Siegerin festgelegt wurde? In dem Fall hat dieses Beispiel gezeigt, das die \schulze das \condorcet Kriterium \ref{sec:condorectKriterium} erfüllt, das besagt, dass ein Kandidat, der gegen alle Gegner gewonnen hat auch der Sieger der Wahlmethode, hier der \schulze sein muss. Das Beispiel 2 in Abschnitt \ref{sec:beispiel2} zeigt, dass auch wenn kein \condorcetSieger existiert, ein Sieger mit der Schulze Methode ermittelt werden kann.
+Zu Beginn des Beispiels konnte man sehen, dass Kandidatin Berta beim Duell mit den anderen Kandidaten gegen alle anderen Kandidaten gewonnen hat. Und es stellt sich daher die Frage, wieso nicht an dieser Stelle schon die Siegerin festgelegt wurde? In dem Fall hat dieses Beispiel gezeigt, dass die \schulze das \condorcet Kriterium \ref{sec:condorectKriterium} erfüllt, das besagt, dass ein Kandidat, der gegen alle Gegner gewonnen hat auch der Sieger der Wahlmethode, hier der \schulze sein muss. Das Beispiel 2 in Abschnitt \ref{sec:beispiel2} zeigt, dass auch wenn kein \condorcetSieger existiert, ein Sieger mit der Schulze Methode ermittelt werden kann.
 
 
 
