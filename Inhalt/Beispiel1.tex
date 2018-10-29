@@ -7,7 +7,7 @@
 \label{sec:ausgangssituation1}
 Im ersten Beispiel wird eine Wahl untersucht, in der jeder Teilnehmer alle Kandidaten bewertet hat und damit eine eindeutige Reihenfolge der Kandidaten generiert werden kann. Kein Kandidat wurde gleich behandelt oder nicht bewertet.
 
-Es ergibt sich Folgende Ausgangssituation:
+Bildhaft wird die \schulze in folgender Ausgangssituation eingesetzt:
 Ein Kurs von 28 Studierenden wählt einen Kurssprecher. Zur Wahl stellt sich Anton (Kandidat $a$), Berta (Kandidatin $b$), Conny (Kandidatin $c$) und Dennis (Kandidat $d$).
 
 Jeder der 28 Studierenden muss die Kandidaten nach Erst-, Zweit-, Dritt- und Viertwunsch ordnen. Nach der Auszählung hat sich Folgende Situation eingespielt. 
@@ -43,7 +43,7 @@ Exemplarisch wird das Duell $a$ gegen $b$ durchgeführt und die Kandidaten $c$ u
 Wird nun dieses Duell betrachte, erhalten Kandidat $a$ 10 Stimmen und Kandidat $b$ 18 Stimmen und Kandidat $b$ gewinnt damit.
 
 
-Wenn dies für alle Duelle gemacht ergibt sich folgende Ergebnisse.
+Wenn dies für alle Duelle gemacht wurde, ergibt sich folgendes Ergebnis.
  \begin{description}
  \centering
  \item[$a$ vs. $b$] 10 Stimmen gegen 18 Stimmen, $b$ gewinnt
@@ -153,13 +153,13 @@ Daher ergibt sich $\mathcal{O} = \{ ac,ba,bc,bd,da,dc \}$
 
 \subsection{Ergebnis} 
 \label{sec:ergebnis1}
-Um den Sieger aus der Relation $\mathcal{O}$ zu finden muss, wie in der Definition in Abschnitt \ref{itm:def235} Punkt (2.3.5) beschreiben, sichergestellt werden, das ein Sieger nur ein Kandidat sein kann der im direkten Duell nie durch einen anderen Gegner geschlagen wird.
+Um den Sieger aus der Relation $\mathcal{O}$ zu finden muss, wie in der Definition in Abschnitt \ref{itm:def235} Punkt (2.3.5) beschreiben, sichergestellt werden, das ein Sieger nur ein Kandidat sein kann, der im direkten Duell nie durch einen anderen Gegner geschlagen wird.
 
 Um das zu prüfen, wird die Relation $\mathcal{O}$ durchgegangen und geprüft, ob es einen Kandidaten gibt, der immer nur auf der linken Seite eine Tupel z.B: ''bd'' steht und damit immer der Gewinner ist und nie geschlagen wurde, dann würde er auf der rechten Seite des Tupels stehen.
 
 Für dieses Beispiel ergibt sich, dass es nur einen Sieger in der Menge $\mathcal{S}=\{b\}$ gibt, den Kandidaten $b$. Damit wurde mit der \schulze festgestellt, dass Kandidatin Berta die Wahl gewonnen hat.
 
-Zu Beginn des Beispiels konnte man sehen, dass Kandidatin Berta beim Duell mit den anderen Kandidaten gegen alle anderen Kandidaten gewonnen hat. Und es stellt sich daher die Frage, wieso nicht an dieser Stelle schon die Siegerin festgelegt wurde? In dem Fall hat dieses Beispiel gezeigt, dass die \schulze das \condorcet Kriterium \ref{sec:condorectKriterium} erfüllt, das besagt, dass ein Kandidat, der gegen alle Gegner gewonnen hat auch der Sieger der Wahlmethode, hier der \schulze sein muss. Das Beispiel 2 in Abschnitt \ref{sec:beispiel2} zeigt, dass auch wenn kein \condorcetSieger existiert, ein Sieger mit der Schulze Methode ermittelt werden kann.
+Zu Beginn des Beispiels konnte man sehen, dass Kandidatin Berta beim Duell mit den anderen Kandidaten gegen alle anderen Kandidaten gewonnen hat. Und es stellt sich daher die Frage, wieso nicht an dieser Stelle schon die Siegerin festgelegt wurde? Dieses Beispiel hat gezeigt, dass die \schulze das \condorcet Kriterium \ref{sec:condorectKriterium} erfüllt, das besagt, dass ein Kandidat, der gegen alle Gegner gewonnen hat auch der Sieger der Wahlmethode, hier der \schulze sein muss. Das Beispiel 2 in Abschnitt \ref{sec:beispiel2} zeigt, dass auch wenn kein \condorcetSieger existiert, ein Sieger mit der Schulze Methode ermittelt werden kann.
 
 
 

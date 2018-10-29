@@ -16,19 +16,19 @@ Sei $A$ eine endliche nicht leere Menge an Kandidaten. Wobei die Anzahl der Kand
   C \in\ \mathbb{N}\  und \ 1 < C <\ \infty
 \]
 
-\item Jeder Wähler ordnet die Kandidaten eine Zahl zu und aus dieser Zahl wird eine Rangfolge erstellt. Je kleiner die Zahl ist desto höher ist die Platzierung. Hierbei ist die Größe der Zahl oder der Abstand uninteressant, da nur die Rangfolge betrachtet wird.
+\item Jeder Wähler ordnet den Kandidaten eine Zahl zu und aus dieser Zahl wird eine Rangfolge erstellt. Je kleiner die Zahl ist desto höher ist die Platzierung. Hierbei ist die Größe der Zahl oder der Abstand uninteressant, da nur die Rangfolge betrachtet wird.
 
 Des weiteren gilt:
 \begin{enumerate}
-\item \label{itm:Regel1} Es können mehrere Kandidaten den gleichen Rang haben, dass bedeutet, dass kein Kandidat dem anderen Kandidaten auf der selben Platzierung vorgezogen wird. 
-\item Wenn ein Wähler keine Bewertung für einen Kandidaten abgibt, werden alle Kandidaten, die eine Bewertung haben, diesem Kandidaten vorgezogen. Werden mehrere Kandidaten nicht bewertet, werden sie wir im vorherigen Punkt bewertet.
+\item \label{itm:Regel1} Es können mehrere Kandidaten die gleiche Platzierung haben, dass bedeutet, dass kein Unterscheidung der Kandidaten auf dieser Platzierung vorgenommen werden kann. 
+\item Wenn ein Wähler keine Bewertung für einen Kandidaten abgibt, werden alle Kandidaten, die eine Bewertung haben, diesem Kandidaten vorgezogen. Werden mehrere Kandidaten nicht bewertet, werden sie wir im vorherigen Punkt gleich behandelt.
 \end{enumerate}
 \end{enumerate}
 
 \subsection{Begriffsdefinition und Erläuterungen } 
 \label{sec:begriffsdefinition}
 
-Bevor die Theoretische Definition aufgestellt werden kann müssen einige Begriffe, Formeln und Notationen besprochen werden, um die Definition einfacher zu verstehen.
+Bevor die theoretische Definition aufgestellt werden kann, müssen einige Begriffe, Formeln und Notationen besprochen werden, um die Definition einfacher zu verstehen.
 
 
 \subsubsection{Verbindung}
@@ -44,7 +44,7 @@ Kandidat $a$ wird von fünf Wählern dem Kandidaten $b$ vorgezogen, und Kandidat
 (5,2)
 \]
 
-In den Beispielen werden diese Duelle in einem Graph dargestellt. In einer vollständigen Schreibweise, wie in Abbildung \ref{fig:verbindung1} skizziert wird. Diese Darstellungsform wird auch in Beispiel 3 in Abschnitt \ref{sec:beispiel3} benötigt.
+In den Beispielen werden diese Duelle in einem Graphen dargestellt. Eine vollständigen Schreibweise, wie in Abbildung \ref{fig:verbindung1} skizziert, wird in Beispiel 3 in Abschnitt \ref{sec:beispiel3} benötigt.
 
 \begin{figure}[!h]
 \centering
@@ -53,7 +53,7 @@ In den Beispielen werden diese Duelle in einem Graph dargestellt. In einer volls
 \label{fig:verbindung1}
 \end{figure}
 
-In vielen Fällen, in denen es nicht möglich ist Kandidaten gleich zu bewerten, wird auch die Kurzschreibweise wie in Abbildung \ref{fig:verbindung2} genutzt. Diese Darstellung wird auch in Beispiel 1 in Abschnitt \ref{sec:beispiel1} und in Beispiel 2 in Abschnitt \ref{sec:beispiel2} genutzt, da dort nicht wichtig ist, wie viele Gegenstimmen ein Siegreicher Kandidat bekommen hat.
+In Fällen, in denen es nicht möglich ist Kandidaten gleich zu bewerten, wird auch die Kurzschreibweise wie in Abbildung \ref{fig:verbindung2} genutzt. Diese Darstellung wird auch in Beispiel 1 in Abschnitt \ref{sec:beispiel1} und in Beispiel 2 in Abschnitt \ref{sec:beispiel2} genutzt, da dort nicht wichtig ist, wie viele Gegenstimmen ein Siegreicher Kandidat bekommen hat.
 
 \begin{figure}[!h]
 \centering
@@ -70,7 +70,7 @@ Ein Weg beschreibt Verbindungen zweier Kandidaten. Diese Kandidaten können dire
 c(1),...,c(2)
 \]
 
-\textbf{Beispiel:} Kandidat $a$ schlägt Kandidat $b$ und Kandidat $b$ schlägt Kandidat $c$, dann schlägt Kandidat $a$ auch Kandidat $c$, da Kandidat $a$, Kandidat $b$ schlagen kann. Auch wenn Kandidat $a$ nicht direkt Kandidat $c$ schlagen kann. Ein solcher Weg ist in rot in Abbildung \ref{fig:weg} aufgezeichnet. 
+\textbf{Beispiel:} Kandidat $a$ schlägt Kandidat $b$ und Kandidat $b$ schlägt Kandidat $c$, dann schlägt Kandidat $a$ auch Kandidat $c$, da Kandidat $a$, Kandidat $b$ schlagen kann, auch wenn Kandidat $a$ nicht direkt Kandidat $c$ schlagen kann. Ein solcher Weg ist in rot in Abbildung \ref{fig:weg} aufgezeichnet. 
 
 \begin{figure}[!h]
 \centering
@@ -81,14 +81,14 @@ c(1),...,c(2)
 
 \subsubsection{Relation}
 \label{relation}
-\glqq Seien $A$ und $B$ Mengen. Eine Teilmenge $R$ enthalten in $A \times B$ heißt (zweistellige) Relation zwischen $A$ und $B$. Gilt $A = B$, so heißt $R$ Relation auf $A$.\grqq \citep{Lang2018}
+\glqq Seien $A$ und $B$ Mengen. Eine Teilmenge $R$ enthalten in $A \times B$ heißt (zweistellige) Relation zwischen $A$ und $B$. Gilt $A = B$, so heißt $R$ Relation auf $A$.\grqq{} \citet{Lang2018}
 
-Die \schulze nutzt die Relation $\mathcal{O}$, um dort die Ergebnisse der Duelle alle Kandidaten zu speichern die sich aus der Menge $P_{D}$ ergeben. $P_{D}$ wird hier oft auch mit $P$ abgekürzt. Die  Relation $\mathcal{O}$ enthält dann nur die siegreichen Duelle. Ein siegreiches Duell $ab$ bedeutet, dass Kandidat $a$ gegen Kandidat $b$ gewonnen hat und ist in $\mathcal{O}$ enthalten. Die Menge $P_{D}$ wird in Abschnitt \ref{PD} erläutert.
+Die \schulze nutzt die Relation $\mathcal{O}$, um dort die Ergebnisse der Duelle alle Kandidaten zu speichern, die sich aus der Menge $P_{D}$ ergeben. $P_{D}$ wird hier oft auch mit $P$ abgekürzt. Die  Relation $\mathcal{O}$ enthält dann nur die siegreichen Duelle. Ein siegreiches Duell $ab$ bedeutet, dass Kandidat $a$ gegen Kandidat $b$ gewonnen hat und ist in $\mathcal{O}$ enthalten. Die Menge $P_{D}$ wird in Abschnitt \ref{PD} erläutert.
 
 
 \subsubsection{Die Menge N}
 \label{mengeN}
-Die Menge $N$ kann man sich als Tabelle Vorstellen in der die Ergebnisse der Duelle der Kandidaten enthalten sind. Ein Beispiel hierfür findet man im Beispiel 1 in Tabelle \ref{Beispie1_N}.
+Die Menge $N$ kann man sich als Tabelle Vorstellen in der die Ergebnisse der Duelle der Kandidaten enthalten sind nach der ersten Auszählung. Ein Beispiel hierfür findet man im Beispiel 1 in Tabelle \ref{Beispie1_N}.
 \newpage
 
 \subsubsection{$\textsubscript{D}z$}
@@ -102,7 +102,7 @@ Diese Menge enthält die stärksten Wege zwischen den Kandidaten. Sprich die Weg
 \subsection{Theoretische Grundlagen} 
 \label{sec:theoretische Grundlagen}
 
-Die grundsätzliche Idee der \schulze ist es, ein condorectes Verfahren, also ein Duell von Kandidat $a$ gegen Kandidat $b$, eingesetzt wird. Hierbei wird das Verfahren jedoch erweitert, indem die Werte für die Duelle erst mit der \schulze ermittelt werden.
+Die grundsätzliche Idee der \schulze ist es, ein condorectes Verfahren, wo ein Duell von Kandidat $a$ gegen Kandidat $b$ eingesetzt wird. Hierbei wird das Verfahren jedoch erweitert, indem die Werte für die Duelle erst berechnet werden.
 
 In diesem Abschnitt werden die Theoretischen Grundlagen erläutert und in den Abschnitten \ref{sec:beispiel1},  \ref{sec:beispiel2} und \ref{sec:beispiel3} an Beispielen erläutert.
 
