@@ -1,0 +1,15 @@
+\footnote{\Vgl \citet{Symfony}.}
+\footnote{\Vgl \citet{Schulze1997}}
+\footnote{\Vgl \citet{Schulze2017}}
+\footnote{\Vgl \citet{Schulze2018}}
+\footnote{\Vgl \citet{scheubrein2013computerunterstuetzte}}
+\footnote{\Vgl \citet{Woodall1996}}
+\footnote{\Vgl \citet{Johnson2005}}
+\footnote{\Vgl \citet{Lang2018}}
+\footnote{\Vgl \citet{EnricoSchoebel2018}}
+\footnote{\Vgl \citet{Wright2009}}
+\footnote{\Vgl \citet{Nurmi2017}}
+\footnote{\Vgl \citet{Debian2018}}
+\footnote{\Vgl \citet{Lohmann2013}}
+\footnote{\Vgl \citet{Hardt2015}}
+Hardt2015
