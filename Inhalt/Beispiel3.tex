@@ -48,7 +48,17 @@ In Abbildung \ref{fig:graph3} sieht man den Graphen, der aus der Menge $N$ gebil
 \label{fig:graph3}
 \end{figure}
 
-Es gibt vier Möglichkeiten einen Gewinner mit der \schulze zu finden. Wenn alle Wähler die Kandidaten in eine strikte Ordnung gebracht haben, dann geben diese Methoden immer das selbe Ergebnis. Dieses Beispiel ist so aufgebaut, dass jede Methode einen anderen Kandidaten als Sieger ausgibt. Daher ist es wichtig vor der Wahl zu definieren, welche Wahlmethode genutzt wird.
+Es gibt verschiedene Möglichkeiten einen Gewinner mit der \schulze zu finden, da es verschiedene  Ansätze gibt die stärke eines Weges zu bestimmen. Die Methoden die in diesem Abschnitt vorgestellt werden sind margin, ratio, winning votes und losing votes.  Wenn alle Wähler die Kandidaten in eine strikte Ordnung gebracht haben, wie in den Beispielen 1 und 2, dann geben diese Methoden immer das selbe Ergebnis, wenn
+
+\begin{align*}
+& \forall (x_{1},x_{2}),(y_{1},y_{2}) \in \mathbb{N}_0 	\times \mathbb{N}_0 \\
+((x_{1} > y_{1} \textrm{ und }  x_{2}\leq y_{2}) & \textrm{ oder } (x_{1} \geq y_{1} \textrm{ und } x_{2} < y_{2}))\Rightarrow (x_{1},x_{2}) \succ_{D} (y_{1},y_{2})
+\end{align*}
+
+gilt. Dies gilt für die vier Methoden die Vorgestellt werden, da dort die Stimmen für den Kandidaten zusammen mit den Gegenstimmen immer der Anzahl der Wähler, also $C$ ergibt und wenn die eine Verbindung mehr Stimmen für den Kandidaten hat ($x_{1} > y_{1}$) muss daraus folgen, dass die Verbindung $y$ mehr Gegenstimmen ($y_{2}$) hat als die Verbindung $x$. $(x_{1},x_{2})$, $(y_{1},y_{2})$ sind dabei Verbindungen zweier Kandidaten in der vollständigen Schreibweise, die als zweiten Wert die Gegenstimmen enthält, Abschnitt \ref{sec:verbindung}. Da alle vier Methoden der Definition entsprechen, ist es auch legitim, dass die Beispiele 1 und 2 mit der winning votes Methode arbeiten und die verkürzte Schreibweise genutzt haben, genauso könnten die anderen drei Methoden eingesetzt werden.
+
+Wenn die Wähler nicht alle Kandidaten in eine strikte Reihenfolge bringen und Kandidaten gleich bewerten, geben diese Methoden je nach Situation gleiche oder unterschiedliche Ergebnisse aus, da die obige Definition nicht mehr passt, da nun Stimmen für den Kandidaten zusammen mit den Stimmen gegen den Kandidaten nicht der Anzahl der Wähler ($C$) entsprechen muss.
+Dieses Beispiel ist so aufgebaut, dass jede Methode einen anderen Kandidaten als Sieger ausgibt. Daher ist es wichtig vor der Wahl zu definieren, welche Wahlmethode genutzt wird.
 
 \subsubsection{margin}
 \label{sec:margin}
