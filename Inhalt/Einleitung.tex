@@ -7,48 +7,28 @@
 \label{sec:markusSchulze}
 Die \schulze wurde nach ihrem Erfinder Markus Schulze benannt und wird in Fachkreisen auch als \glqq Schwartz Sequential dropping\grqq{} oder auch \glqq path winner\grqq{} Methode bezeichnet. Markus Schulze ist ein Mathematiker und hat diese Methode an der TU Berlin entwickelt.
 
-Die Schulze Methode ist ein Verfahren, um eine Wahl auszuwerten und im besten Fall einen eindeutigen Sieger zu finden.
+Die Schulze Methode ist ein Verfahren, um eine Wahl auszuwerten und im besten Fall einen eindeutigen Sieger zu Finden.
 
 Er hat diese Methode erstmals 1997 in einer offenen E-Mail zur Diskussion gestellt\footnote{\Vgl \citet{Schulze1997}.} und veröffentliche immer wieder aktualisierte Versionen seiner Theorie. In dieser Ausarbeitung bezieht sich der Autor dabei auf seine aktualisierten Ausarbeitungen aus den Jahren 2017\footnote{\Vgl \citet{Schulze2017}} und 2018\footnote{\Vgl \citet{Schulze2018}}.
 
 \subsection{Problemstellung} 
+\label{sec:problemstellungBeispiel}
+Zu Beginn soll dieses Beispiel zeigen, wie schwer es sein kann einen gerechten Sieger zu finden. Ein Kurs von 30 Personen soll aus drei Kandidaten einen Kurssprecher wählen. Jede Person bringt die drei Kandidaten in eine Rangfolge, von Erstwunsch, Zweitwunsch und Drittwunsch, dies ist eine Wahlmethode, die mit der \schulze bearbeitet werden kann. 
+
+Dort hat sich folgende Stimmsituation ergeben, 10 Wähler  haben sich für die Reihenfolge $a$, $b$, $c$ entschieden, 10 Wähler haben die Reihenfolge $b$, $a$, $c$ und 10 Wähler die Reihenfolge $c$, $a$, $b$ angegeben.
+
+Bei Betrachtung dieses Beispiels fällt auf, dass kein Kandidat im direktem Duell seine beiden Gegner schlagen kann. Kein Kandidat ist von alle Wählern direkt bevorzugt worden. Naiv kann man sagen, dass man Kandidat $a$ nimmt, da dieser Kandidat 10 mal Erstwunsch und 20 mal Zweitwunsch ist, dass wäre besser als die Ergebnisse der anderen Kandidaten. Ist das eine gerechte Entscheidung? Bei einer überschaubaren Menge von 30 Personen könnte darüber abgestimmt werden, ob das gerecht ist. Bei einer Wahl von mehreren Hundert oder Tausend Wählern wird dies schon schwieriger. Dort wird es wichtig eine Methode zu wählen, die als \glqq gerechte\grqq{} gilt.
+Kriterien, um zu definieren was gerecht ist, wird vom Forschungsgebiet der Sozialwahltheorie definiert.
+
+\subsection{Sozialwahltheorie} 
 \label{sec:problemstellung}
-In einer Demokratie, aber auch in größeren Gruppen ist es oft sehr schwer eine Wahl gerecht auszuwerten, um aus den Präferenzen des Einzelnen einen Kompromiss zu finden, der für alle maximal zufriedenstellend ist.
+Die Einführungssituation hat schon gezeigt, dass es sehr schwer ist eine Wahl gerecht auszuwerten. In einer großen Demokratie wird es noch komplexer und eine Herausforderung aus den Präferenzen der Einzelnen Wähler einen Kompromiss zu finden, der für alle maximal zufriedenstellend ist.
 
-Das Problem einen gerechten Sieger zu finden, soll mit der \schulze gelöst werden. Die \schulze fällt in das Gebiet der Sozialwahltheorie. Dieses interdisziplinäre Forschungsgebiet beschäftigt sich mit der Untersuchung von Gruppenentscheidungen. In dieser Forschung werden individuelle Präferenzen und Entscheidungen der teilnehmenden Personen aggregiert, um daraus eine \glqq gerechte\grqq{} kollektive Entscheidung abzuleiten. Damit man eine \glqq gerechte\grqq{} Methode finden kann, beschäftigen sich viele Teilbereiche der Forschung, wie z.B. die Mathematik, Volkswirtschaft, Psychologie, Philosophie, Politikwissenschaft und Rechtswissenschaft mit diesem Thema und stellen dabei verschiedenste Ansätze und Vorgehensweisen vor. Alle beteiligten Forschungsgebiete stellen dabei Definitionen auf, was eine \glqq gerechte\grqq{} Methode erfüllen soll\footnote{\Vgl \citet{scheubrein2013computerunterstuetzte} Seite 91 ff.}.
+Ein Ansatz einen gerechten Sieger zu finden, soll mit der \schulze gegeben werden. Die \schulze fällt in das Gebiet der Sozialwahltheorie. Dieses interdisziplinäre Forschungsgebiet beschäftigt sich mit der Untersuchung von Gruppenentscheidungen. In dieser Forschung werden individuelle Präferenzen und Entscheidungen der teilnehmenden Personen aggregiert, um daraus eine \glqq gerechte\grqq{} kollektive Entscheidung abzuleiten. Damit man eine \glqq gerechte\grqq{} Methode finden kann, beschäftigen sich viele Teilbereiche der Forschung, wie z.B. die Mathematik, Volkswirtschaft, Psychologie, Philosophie, Politikwissenschaft und Rechtswissenschaft mit diesem Thema und stellen dabei verschiedenste Ansätze und Vorgehensweisen vor. Alle beteiligten Forschungsgebiete stellen dabei Definitionen auf, was eine \glqq gerechte\grqq{} Methode erfüllen soll\footnote{\Vgl \citet{scheubrein2013computerunterstuetzte} Seite 91 ff.}.
 
-Die \schulze ist eine condorcete Wahlmethoden, dass bedeutet das immer zwei Kandidaten verglichen werden und ein Sieger aus diesem Vergleich hervorgeht. Es haben sich über die Jahre viele Qualitätskriterien entwickelt, an denen man messen kann, ob eine Methode im Sinne der Sozialwahltheorie gerechte ist.
+Die \schulze ist eine Abwandlung der \condorcet Wahlmethode, dass bedeutet das immer zwei Kandidaten verglichen werden und ein Sieger aus diesem Vergleich hervorgeht. Es haben sich über die Jahre viele Qualitätskriterien entwickelt, an denen man messen kann, ob eine Methode im Sinne der Sozialwahltheorie gerechte ist. In der Abschließenden Bewertung werden einige dieser Kriterien betrachtet.
 
-Im Folgenden werden einige Kriterien definiert, die in der Sozialwahltheorie von Bedeutung sind. In Abschnitt \ref{sec:Bewertung1} werden diese Kriterien erneut untersucht und festgestellt in wieweit die Schulze Methode diesen Kriterien gerecht wird. Viele dieser Kriterien gelten für Methoden, die einen Sieger oder mehrere Sieger ermitteln. 
 
-\subsubsection{Monotonie Kriterium} 
-\label{sec:monotoniekriterium}
-Der Gewinner einer Wahl kann nicht durch ein besseres Ranking verlieren und ein Verlierer durch ein schlechteres gewinnen.\footnote{\Vgl \citet{Woodall1996}} Dieses Kriterium ist trivial, aber zeigt, dass die zugrundeliegende Wahlmethode nicht der erwarteten Logik einer Wahl widerspricht.
-
-\subsubsection{\condorcet Kriterium} 
-\label{sec:condorectKriterium}
-Nach der Wahl wird ein Zweikampf zweier Kandidaten Simuliert und dabei untersucht, wie oft der Kandidat $a$ dem Kandidat $b$ vorgezogen wurde. Die Bedeutung von \glqq vorgezogen\grqq{} wir in Abschnitt \ref{sec:beispiel3} für die \schulze erläutert, ist im allgemeinen aber Abhängig von der gewählten Wahlmethode. \condorcetSieger ist der Kandidat der alle anderen Kandidaten schlägt. Einen solchen Sieger muss es nicht geben. Ein Wahlverfahren erfüllt das Condorect-Kriterium, wenn der gewählte Sieger auch der \condorcetSieger ist, sofern es einen \condorcetSieger gibt.\footnote{\Vgl \citet{Johnson2005}}
-
-\subsubsection{Lösbarkeits Kriterium} 
-\label{sec:loesbarkeitsKriterium}
-Eine Wahlmethode erfüllt dieses Kriterium, wenn es einen eindeutigen Sieger gibt, hierbei gibt es zwei Ansätze dies zu prüfen\footnote{\Vgl \citet{Schulze2017}}
-\begin{enumerate}
-\item Wenn die Menge der Stimmen Richtung unendlich tendiert, geht die Wahrscheinlichkeit keinen eindeutigen Sieger zu erhalten gegen Null.
-\item Wenn es mehr als einen Sieger gibt, reicht eine einzelne Stimme, um einen eindeutigen Sieger zu erhalten.
-\end{enumerate}
-Dieses Kriterium wird wichtig, wenn die Duelle der Kandidaten simuliert werden. Sofern Kandidaten gleich bewertet werden können, wird Punkt zwei wichtig.
-
-\newpage
-\subsubsection{Pareto Kriterium} 
-\label{sec:paretoKriterium}
-Dieses Kriterium gibt an, dass
-\begin{enumerate}
-\item wenn jeder Wähler Alternative $a$, Alternative $b$ vorzieht, muss Alternative $a$ immer Alternative $b$ bevorzugt werden
-\item wenn kein Wähler Alternative $a$, Alternative $b$ vorzieht, muss Alternative $a$ nicht besser sein als $b$.\footnote{\Vgl \citet{Schulze2017}}
-\end{enumerate}
-
-Dies ist nur ein Ausschnitt von Kriterien, die für eine gerechte Wahlmethode gelten sollen. Eine größere Übersicht kann in \glqq The Schulze Method
-of Voting\grqq{}\footnote{\Vgl \citet{Schulze2018} Kapitel 11} gefunden werden. Dort wird in Kapitel 4 auch bewiesen, dass die \schulze die Kriterien erfüllt. Ein Beispiel für die Richtigkeit des \condorcet Kriteriums kann auch im ersten Beispiel (Abschnitt: \ref{sec:beispiel1})  gefunden werden.
 
 
 

@@ -1,0 +1,42 @@
+% !TEX root = ../Projektdokumentation.tex
+\subsection{Kriterien der Sozialwahltheorie}
+\label{sec:kriterienSozial}
+Um zu belegen, dass eine Methode gerecht ist, muss eine Methode möglichst viele Kriterien der Sozialwahltheorie erfüllen. Einen kleinen Ausschnitt von Kriterien, die auch in Tabelle \ref{schulzeKramer} aufgeführt sind werden hier erläutert. Eine vollständige Übersicht kann in \glqq The Schulze Method
+of Voting\grqq{}\footnote{\Vgl \citet{Schulze2018} Kapitel 11} gefunden werden. Dort wird in Kapitel 4 auch bewiesen, dass die \schulze die Kriterien erfüllt.
+
+
+\subsubsection{Monotonie Kriterium} 
+\label{sec:monotoniekriterium}
+Der Gewinner einer Wahl kann nicht durch ein besseres Ranking verlieren und ein Verlierer durch ein schlechteres gewinnen.\footnote{\Vgl \citet{Woodall1996}} Dieses Kriterium ist trivial, aber zeigt, dass die zugrundeliegende Wahlmethode nicht der erwarteten Logik einer Wahl widerspricht.
+
+Das bedeutet, dass wenn die schwächste Verbindung des Siegers stärker werde, kann er dadurch nicht verlieren, das selbe gilt auch für Verlierer, wenn deren schwächste Verbindungen schwächer werden, dann können sie damit nicht gewinnen.
+
+\subsubsection{\condorcet Kriterium} 
+\label{sec:condorectKriterium}
+Nach der Wahl wird ein Zweikampf zweier Kandidaten Simuliert und dabei untersucht, wie oft der Kandidat $a$ dem Kandidat $b$ vorgezogen wurde. Die Bedeutung von \glqq vorgezogen\grqq{} wir in Abschnitt \ref{sec:beispiel3} für die \schulze erläutert, ist im allgemeinen aber Abhängig von der gewählten Wahlmethode. \condorcetSieger ist der Kandidat der alle anderen Kandidaten schlägt. Einen solchen Sieger muss es nicht geben. Ein Wahlverfahren erfüllt das Condorcet-Kriterium, wenn der gewählte Sieger auch der \condorcetSieger ist, sofern es einen \condorcetSieger gibt.\footnote{\Vgl \citet{Johnson2005}}
+
+Das Verhalten konnte in Beispiel 1 (Abschnitt \ref{sec:beispiel1}) beobachtet werden, dort wurde auch der Condorcet-Sieger der Sieger der \schulze .
+
+\subsubsection{Lösbarkeits Kriterium} 
+\label{sec:loesbarkeitsKriterium}
+Es gibt Situationen, in dem kann eine Wahlmethode keinen eindeutigen Sieger hervorbringen, da die Stimmsituation für zwei oder mehrere Kandidaten gleich sind.Auch die \schulze kann nicht immer direkt einen eindeutigen Sieger bestimmen. Jedoch kann man mathematisch zeigen, dass eine Methode im Allgemeinen eine eindeutige lösung liefert.\footnote{\Vgl \citet{Schulze2017}}
+\begin{enumerate}
+\item Wenn die Anzahl der Stimmen Richtung unendlich tendiert, geht die Wahrscheinlichkeit keinen eindeutigen Sieger zu erhalten gegen Null.
+\item Wenn es mehr als einen Sieger gibt, reicht eine einzelne Stimme, um einen eindeutigen Sieger zu erhalten.
+\end{enumerate}
+
+Für die Schulz Methode bedeutet zwei Sieger immer, dass zwei Kandidaten nicht geschlagen wurden, beispielsweise die Kandidaten $a$ und $b$. Wenn eine weitere Stimme hinzukommt, die zwischen den beiden Siegern $a$ und $b$ unterscheidet, z.B. Kandidat $a$ wird dem Kandidaten $b$ vorgezogen, so ändert sich die schwächsten Verbindungen zu Gunsten des Kandidaten $a$, sodass nun ein eindeutiger Sieger gefunden werden kann, da $b$ nun von $a$ geschlagen wird.
+
+
+\subsubsection{Pareto Kriterium} 
+\label{sec:paretoKriterium}
+Dieses Kriterium gibt an, dass
+\begin{enumerate}
+\item wenn jeder Wähler Kandidat $a$, Kandidat $b$ vorzieht, muss Kandidat $a$ immer Kandidat $b$ bevorzugt werden
+\item wenn kein Wähler Kandidat $a$, Kandidat $b$ vorzieht, muss Kandidat $a$ nicht besser sein als $b$.\footnote{\Vgl \citet{Schulze2017}}
+
+Dieses Prinzip wird wichtig wenn Kandidaten gleich oder nicht bewertet werden. Dort darf keine Methode einen der beiden Auswählen und eine bestimmte Platzierung geben oder in eine Reihenfolge einordnen, diese Kandidaten wenn sie nicht unterschieden werden können immer auf der selben Ebene auftreten. 
+
+Dies wird oftmals gebrochen, wenn die Auswertung eine Reihenfolge ausgeben muss und dann einfach der Kandidat der im Alphabet als erstes kommt zuerst anzeigt, oder der der in der Liste als erstes Auftaucht. Das muss aber von der Wahlmethode auf jeden Fall unterbunden werden, so wie die \schulze es auch macht. 
+\end{enumerate}
+
