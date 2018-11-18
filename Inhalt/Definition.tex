@@ -1,4 +1,6 @@
 % !TEX root = ../Projektdokumentation.tex
+
+\newpage
 \section{Definition}
 \label{sec:definition}
 
@@ -8,7 +10,7 @@
 Es gibt einige Voraussetzungen, die eine Wahl erfüllen muss, damit die \schulze auf diese Wahl angewendet werden kann.
 
 \begin{enumerate}
-\item Es muss mindestens zwei Kandidaten geben, die sich zu Wahl stellen, da sonst keine Rangfolge erstellt werden kann. Bei zwei Kandidaten ist die Lösung jedoch trivial, da dort der Gewinner der Kandidat ist, der am häufigsten, von den Wählern dem Gegner vorgezogen wurde.
+\item Es muss mindestens zwei Kandidaten geben, die zur Wahl stehen, da sonst keine Rangfolge erstellt werden kann. Bei zwei Kandidaten ist die Lösung jedoch trivial, da dort der Gewinner der Kandidat ist, der am häufigsten, von den Wählern dem Gegner vorgezogen wurde.
 
 \textbf{Mathematische Definition:}
 Sei $A$ eine endliche nicht leere Menge an Kandidaten. Wobei die Anzahl der Kandidaten $C$ ist und gilt: 
@@ -16,12 +18,12 @@ Sei $A$ eine endliche nicht leere Menge an Kandidaten. Wobei die Anzahl der Kand
   C \in\ \mathbb{N}\  und \ 1 < C <\ \infty
 \]
 
-\item Jeder Wähler ordnet den Kandidaten eine Zahl zu und aus dieser Zahl wird eine Rangfolge erstellt. Je kleiner die Zahl ist desto höher ist die Platzierung. Hierbei ist die Größe der Zahl oder der Abstand uninteressant, da nur die Rangfolge betrachtet wird.
+\item Jeder Wähler ordnet den Kandidaten eine Zahl zu. Aus dieser Zahl wird eine Rangfolge erstellt. Je kleiner die Zahl ist, desto höher ist die Platzierung. Hierbei ist die Größe der Zahl oder der Abstand uninteressant, da nur die Rangfolge betrachtet wird.
 
 Des Weiteren gilt:
 \begin{enumerate}
-\item \label{itm:Regel1} Es können mehrere Kandidaten die gleiche Platzierung haben, dass bedeutet, dass kein Unterscheidung der Kandidaten auf dieser Platzierung vorgenommen werden kann. 
-\item Wenn ein Wähler keine Bewertung für einen Kandidaten abgibt, werden alle Kandidaten, die eine Bewertung haben, diesem Kandidaten vorgezogen. Werden mehrere Kandidaten nicht bewertet, werden sie wir im vorherigen Punkt gleichbehandelt.
+\item \label{itm:Regel1} Es können mehrere Kandidaten die gleiche Platzierung haben. Hierbei kann keine Unterscheidung der Kandidaten auf dieser Platzierung vorgenommen werden.
+\item Wenn ein Wähler keine Bewertung für einen Kandidaten abgibt, werden alle Kandidaten, die eine Bewertung haben, diesem Kandidaten vorgezogen. Werden mehrere Kandidaten nicht bewertet, werden sie wir im vorherigen Punkt beschrieben behandelt.
 \end{enumerate}
 \end{enumerate}
 
@@ -30,18 +32,18 @@ Des Weiteren gilt:
 
 Bevor die theoretische Definition aufgestellt werden kann, müssen einige Begriffe, Formeln und Notationen besprochen werden, um die Definition einfacher zu verstehen.
 
-Da dies nur Erläuterungen zu einzelnen Punkten der Definition sind, ist es elementar dies zusammen mit dem Abschnitt \ref{sec:theoretische Grundlagen} zu lesen. In den Erläuterungen wird oft von stärksten Wegen gesprochen. Diese ist ein Kernstück der \schulze und damit Teil der Definition und ist auch innerhalb der Definition im Schritt 2.3.2 erklärt .
+Da im folgenden nur einzelne Punkte der Definition erläutert werde, ist es elementar dies zusammen mit dem Abschnitt \ref{sec:theoretische Grundlagen} zu lesen. In den Erläuterungen wird oft von \glqq stärksten Wegen\grqq{} gesprochen. Diese ist ein Kernstück der \schulze und damit Teil der Definition. Sie werden in Abschnitt 2.3.2 definiert.
 
 
 \subsubsection{Verbindung}
 \label{sec:verbindung}
-Eine Verbindung in diesem Kontext bedeutet, dass zwei Kandidaten gegeneinander antreten und diese Duell ist eine Verbindung mit der folgenden Notation
+Eine Verbindung in diesem Kontext bedeutet, dass zwei Kandidaten gegeneinander antreten. Ein Duell ist eine Verbindung mit der folgenden Notation
 
 \[
 (N[a,b],N[b,a])
 \]
 \textbf{Beispiel:}
-Kandidat $a$ wird von fünf Wählern dem Kandidaten $b$ vorgezogen, und Kandidat $b$ wird von zwei Wählern Kandidat $a$ vorgezogen, würde wie folgt notiert werden. 
+Wenn Kandidat $a$ von fünf Wählern Kandidaten $b$ und umgekehrt Kandidat $b$ von zwei Wählern Kandidat $a$ vorgezogen wird, würde die Notation wie folgt aussehen: 
 \[
 (5,2)
 \]
@@ -55,7 +57,7 @@ In den Beispielen werden diese Duelle in einem Graphen dargestellt. Eine vollst�
 \label{fig:verbindung1}
 \end{figure}
 
-In Fällen, in denen es nicht möglich ist Kandidaten gleich zu bewerten, wird auch die Kurzschreibweise wie in Abbildung \ref{fig:verbindung2} genutzt. Diese Darstellung wird auch in Beispiel 1 und in Beispiel 2 genutzt, da dort nicht wichtig ist, wie viele Gegenstimmen ein siegreicher Kandidat bekommen hat, da nur die Stimmen für den Kandidaten untersucht werden.
+In Fällen, in denen es nicht möglich ist Kandidaten gleich zu bewerten, wird auch die Kurzschreibweise wie in Abbildung \ref{fig:verbindung2} genutzt. Diese Darstellung wird auch in Beispiel 1 und 2 genutzt, da dort nicht wichtig ist, wie viele Gegenstimmen ein siegreicher Kandidat bekommen hat, da nur die Stimmen für den Kandidaten untersucht werden.
 
 \begin{figure}[!h]
 \centering
@@ -85,15 +87,15 @@ Eine Verbindung von Kandidat $a$ zu Kandidat $b$ besteht dann, wenn Kandidat $a$
 
 \subsubsection{Die Menge N}
 \label{mengeN}
-Die Menge $N$ kann man sich als Tabelle Vorstellen in der die Ergebnisse der Duelle der Kandidaten enthalten sind nach der ersten Auszählung. Die Menge $N$ ist die Grundlage der \schulze , auf diese Menge baut sich der Algorithmus auf. Ein Beispiel für diese Menge findet sich im Beispiel 1 in Tabelle \ref{Beispie1_N}.
+Die Menge $N$ kann man sich als Tabelle vorstellen, in der die Ergebnisse der Duelle aller Kandidaten nach der ersten Auszählung enthalten sind. Die Menge $N$ ist die Grundlage der \schulze. Auf diese Menge baut sich der Algorithmus auf. Ein Beispiel für diese Menge findet sich im Beispiel 1 in Tabelle \ref{Beispie1_N}.
 
 \subsubsection{$\succ_{v}$}
 \label{vv}
-Das Zeichen $\succ_{v}$ stellt einen Vergleich zweier Kandidaten dar. $a \succ_{v}{ } b$ bedeutet, dass von den Wählern ($v$) der Kandidat $a$ strikt dem Kandidat $b$ vorgezogen wird. Wenn also beide Kandidaten verglichen werden, $a$ der Sieger ist.
+Das Zeichen $\succ_{v}$ stellt einen Vergleich zweier Kandidaten dar. $a \succ_{v}{ } b$ bedeutet, dass von den Wählern ($v$) der Kandidat $a$ strikt dem Kandidat $b$ vorgezogen wird. Wenn also beide Kandidaten verglichen werden, ist $a$ der Sieger.
 
 \subsubsection{$\textsubscript{D}z$}
 \label{dz}
-Der Wert $_{D}z$ eines Weges ist der Wert, der die schwächste Verbindung repräsentiert. Das bedeutet, dass ein Weg untersucht wird und dort die schwächste direkt Verbindung zweier Kandidaten gesucht wird und dieser Wert wird als $_{D}z$ bezeichnet. Dieser Wert ist auch der ausschlaggebende Wert, der in  $P_{D}$ eingetragen wird. Wie eine schwache Verbindung definiert ist, ist abhängig von der gewählten Art der \schulze. Dies wird ausführlich im dritten Beispiel erläutert. Zum einfachen Verständnis kann anfangs ein einfacher Größenvergleich angenommen werden.
+Der Wert $_{D}z$ eines Weges ist der Wert, der die schwächste Verbindung repräsentiert. Das bedeutet, dass ein Weg untersucht wird und dort die schwächste direkt Verbindung zweier Kandidaten gesucht wird, welcher die schwächste direkte Verbindung zweier Kandidaten darstellt. Dieser Wert wird als $_{D}z$ bezeichnet. Dieser Wert ist auch der ausschlaggebende Wert, der in  $P_{D}$ eingetragen wird. Wie eine schwache Verbindung definiert ist, ist abhängig von der gewählten Art der \schulze. Dies wird ausführlich im dritten Beispiel erläutert. Zum einfacheren Verständnis kann anfangs ein einfacher Größenvergleich angenommen werden.
 
 
 \subsubsection{Relation}
@@ -102,14 +104,11 @@ Der Wert $_{D}z$ eines Weges ist der Wert, der die schwächste Verbindung reprä
 
 Die \schulze nutzt die Relation $\mathcal{O}$, um dort die Ergebnisse der Duelle alle Kandidaten zu speichern, die sich aus der Menge $P_{D}$ ergeben. $P_{D}$ wird hier oft auch mit $P$ abgekürzt. Die  Relation $\mathcal{O}$ enthält dann nur die siegreichen Duelle. Ein siegreiches Duell $ab$ bedeutet, dass Kandidat $a$ gegen Kandidat $b$ gewonnen hat und ist in $\mathcal{O}$ enthalten.
 
-
-\subsection{Theoretische Grundlagen} 
+\newpage
+\subsection{Mathematische Grundlagen} 
 \label{sec:theoretische Grundlagen}
 
-Die grundsätzliche Idee der \schulze ist es, ein condorcetes Verfahren, wie in Abschnitt \ref{sec:condorectKriterium} beschrieben, durchzuführen. Dieses Verfahren wird jedoch über eine neue Berechnungsstufe verfeinert, um in einer Situation einen Sieger zu ermitteln, in der die einfache \condorcetMethode keine Lösung liefert.
-
-\newpage
-In diesem Abschnitt werden die Theoretischen Grundlagen erläutert und in den Abschnitten \ref{sec:beispiel1},  \ref{sec:beispiel2} und \ref{sec:beispiel3} an Beispielen erläutert.
+Die grundsätzliche Idee der \schulze ist es, ein condorcetes Verfahren, wie in Abschnitt \ref{sec:condorectKriterium} beschrieben, durchzuführen. Dieses Verfahren wird jedoch über eine neue Berechnungsstufe verfeinert, um in einer Situation einen Sieger zu ermitteln, in der die einfache \condorcetMethode keine Lösung liefert. In diesem Abschnitt werden die mathematischen Grundlagen erläutert und in den Abschnitten \ref{sec:beispiel1},  \ref{sec:beispiel2} und \ref{sec:beispiel3} an Beispielen erläutert.
 
 
 
@@ -120,7 +119,7 @@ In diesem Abschnitt werden die Theoretischen Grundlagen erläutert und in den Ab
 }
 
 \begin{description}
-\item[\namedlabel{itm:def231}{$(2.3.1)$}]  Ein Weg von Kandidat $x \in A$ zu Kandidat $y \in A$ ist eine folgen von Kandidaten $c(1),...,c(n) \in A$ mit den folgenden Eigenschaften:
+\item[\namedlabel{itm:def231}{$(2.3.1)$}]  Ein Weg von Kandidat $x \in A$ zu Kandidat $y \in A$ ist eine Folgen von Kandidaten $c(1),...,c(n) \in A$ mit den folgenden Eigenschaften:
 
 \begin{center}
 \begin{enumerate}

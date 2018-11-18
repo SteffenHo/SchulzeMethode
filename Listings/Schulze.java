@@ -19,7 +19,7 @@ public class Schulze {
     }
 
     /**
-     * Initialize the Array which contains the duel of all alternatives.
+     * Initialize the Array which contains the duel for all alternatives.
      */
     public void init() {
         P = SchulzeHelper.init2DDoubleArray(count);
@@ -69,7 +69,7 @@ public class Schulze {
             for (int j = 0; j < count; j++) {
                 if (i != j) {
                     if (P[j][i] > P[i][j]) {
-                        winners[i] = false; // ji is not in the relation O and the winner muss be in relation O
+                        winners[i] = false; // ji is not in the relation O and the winner has to be in relation O
                     }
                 }
             }

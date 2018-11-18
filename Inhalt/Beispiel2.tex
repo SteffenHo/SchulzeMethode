@@ -4,7 +4,7 @@
 
 \subsection{Ausgangssituation} 
 \label{sec:ausgangssituation2}
-Als Ausgangsmethode kann, wie in Beispiel 1 (Abschnitt: \ref{sec:ausgangssituation1}) wieder eine Wahl eines Kurssprechers angenommen werden. 
+Als Ausgangsmethode kann, wie in Beispiel 1 (Abschnitt: \ref{sec:ausgangssituation1}) wieder die Wahl eines Kurssprechers angenommen werden. 
 
 In dieser Wahl haben 21 Personen die Kandidaten $a$ bis $d$ in eine Reihenfolge sortiert, dabei hat sich diese Verteilung eingestellt:
 
@@ -21,7 +21,7 @@ In dieser Wahl haben 21 Personen die Kandidaten $a$ bis $d$ in eine Reihenfolge 
 
 \subsection{Lösungsschritte} 
 \label{sec:loesungen2}
-Zuerst werden die Kandidaten wieder gegeneinander aufgestellt.
+Zuerst werden wieder die Duelle zwischen den Kandidaten simuliert.
 
  \begin{description}
  \centering
@@ -33,7 +33,7 @@ Zuerst werden die Kandidaten wieder gegeneinander aufgestellt.
  \item[$c$ vs. $d$] 12 Stimmen gegen 9 Stimmen, $c$ gewinnt
  \end{description}
  
-In diesem Fall gibt es kein \condorcetSieger, also hat es kein Kandidaten geschafft alle Gegner im Zweikampf zu schlage, diese Situation ist das sogenannte \condorcetParadox.\footnote{\Vgl \citet{EnricoSchoebel2018}}
+In diesem Fall gibt es kein \condorcetSieger, also hat es kein Kandidaten geschafft alle Gegner im Zweikampf zu schlage.  Diese Situation wird auch als  \condorcetParadox bezeichnet.\footnote{\Vgl \citet{EnricoSchoebel2018}}
 
 \newpage
 Die \schulze kann dieses Problem jedoch lösen indem, wie in Tabelle \ref{beispiel2N} dargestellt, die Menge $N$ gebildet wird.
@@ -53,11 +53,11 @@ Nun werden wieder die stärksten Pfade gesucht und in die Menge $P$ eingefügt, 
 
 \input{Tabellen/beispiel2_p}
 
-Anschließend wird mit den Werten der Menge $P$ die neu Zweikampfsituation erstellt und man erhält die Relation $\mathcal{O} = \{ ab,ac,cb,da,db,dc \}$
+Anschließend wird mit den Werten der Menge $P$ die neue Zweikampfsituation erstellt und man erhält die Relation $\mathcal{O} = \{ ab,ac,cb,da,db,dc \}$
 
 
 \subsection{Ergebnis} 
 \label{sec:ergebnis2}
 Analog zu Beispiel 1 (Abschnitt \ref{sec:beispiel1}) wird die Relation $\mathcal{O}$ untersucht, um die Menge der Sieger zu finden. In diesem Fall ist $\mathcal{S}=\{d\}$  und der Sieger ist Kandidat $d$. Dies zeigt, dass die \schulze einen Sieger finden kann, in Situationen, die durch andere Wahlverfahren nicht gelöst werden können.
 
-Eine Ausführliche Besprechung, wie in Beispiel 1 kann in der originalen Ausarbeitung von Martin Schulze\footnote{\Vgl \citet{Schulze2017} Kapitel 3.1} nachgelesen werden.
+Eine ausführliche Besprechung, wie in Beispiel 1 kann in der originalen Ausarbeitung von Martin Schulze\footnote{\Vgl \citet{Schulze2017} Kapitel 3.1} nachgelesen werden.
