@@ -95,9 +95,6 @@ Das Zeichen $\succ_{v}$ stellt einen Vergleich zweier Kandidaten dar. $a \succ_{
 \label{dz}
 Der Wert $_{D}z$ eines Weges ist der Wert, der die schwächste Verbindung repräsentiert. Das bedeutet, dass ein Weg untersucht wird und dort die schwächste direkt Verbindung zweier Kandidaten gesucht wird und dieser Wert wird als $_{D}z$ bezeichnet. Dieser Wert ist auch der ausschlaggebende Wert, der in  $P_{D}$ eingetragen wird. Wie eine schwache Verbindung definiert ist, ist abhängig von der gewählten Art der \schulze. Dies wird ausführlich im dritten Beispiel erläutert. Zum einfachen Verständnis kann anfangs ein einfacher Größenvergleich angenommen werden.
 
-\subsubsection{$P_{D}$}
-\label{PD}
-Diese Menge enthält die stärksten Wege zwischen den Kandidaten. Sprich die Wege, in denen die schwächste Verbindung ($_{D}z$) des Weges, stärker ist als alle anderen schwächsten Verbindungen von Wegen, die vom gleichen Kandidaten ausgehen und zum gleichen Kandidaten führen.
 
 \subsubsection{Relation}
 \label{relation}
@@ -105,13 +102,15 @@ Diese Menge enthält die stärksten Wege zwischen den Kandidaten. Sprich die Weg
 
 Die \schulze nutzt die Relation $\mathcal{O}$, um dort die Ergebnisse der Duelle alle Kandidaten zu speichern, die sich aus der Menge $P_{D}$ ergeben. $P_{D}$ wird hier oft auch mit $P$ abgekürzt. Die  Relation $\mathcal{O}$ enthält dann nur die siegreichen Duelle. Ein siegreiches Duell $ab$ bedeutet, dass Kandidat $a$ gegen Kandidat $b$ gewonnen hat und ist in $\mathcal{O}$ enthalten.
 
-\newpage
+
 \subsection{Theoretische Grundlagen} 
 \label{sec:theoretische Grundlagen}
 
 Die grundsätzliche Idee der \schulze ist es, ein condorcetes Verfahren, wie in Abschnitt \ref{sec:condorectKriterium} beschrieben, durchzuführen. Dieses Verfahren wird jedoch über eine neue Berechnungsstufe verfeinert, um in einer Situation einen Sieger zu ermitteln, in der die einfache \condorcetMethode keine Lösung liefert.
 
+\newpage
 In diesem Abschnitt werden die Theoretischen Grundlagen erläutert und in den Abschnitten \ref{sec:beispiel1},  \ref{sec:beispiel2} und \ref{sec:beispiel3} an Beispielen erläutert.
+
 
 
 \def\namedlabel#1#2{\begingroup
@@ -143,10 +142,13 @@ Wenn ein Weg $c(1),..,c(n)$ die Stärke $z \in  \mathbb{N}_{0} \times \mathbb{N}
 
 \begin{align}
 P_{D}[a,b] := max\textsubscript{D}\{ min\textsubscript{D} \{(N[c(i),c(i+1)],N[c(i+1),c(i)])| i=1,...,n-1\} \nonumber \\
-     |c(1),...,c(n) \text{ ein Weg von Kandidat a zu Kandidat b}\} \nonumber
+     |c(1),...,c(n) \text{ ein Weg von Kandidat a zu Kandidat b}\} \nonumber     
 \end{align}
 
 In anderen Worten: $P_{D}[a,b] \in \mathbb{N}_{0} \times \mathbb{N}_{0}$ ist die Stärke des stärksten Weges von Kandidat $a \in A$ zu Kandidat $b \in A$.
+
+\label{PD}
+Diese Menge $P_{D}$ enthält die stärksten Wege zwischen den Kandidaten. Sprich die Wege, in denen die schwächste Verbindung ($_{D}z$) des Weges, stärker ist als alle anderen schwächsten Verbindungen von Wegen, die vom gleichen Kandidaten ausgehen und zum gleichen Kandidaten führen.
 
 \item[\namedlabel{itm:def234}{$(2.3.4)$}]Die zweistellige Relation $\mathcal{O}$ auf $A$ ist wie folgt definiert:
 \[
