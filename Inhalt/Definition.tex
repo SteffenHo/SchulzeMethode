@@ -67,10 +67,12 @@ In Fällen, in denen es nicht möglich ist Kandidaten gleich zu bewerten, wird a
 \newpage
 \subsubsection{Weg}
 \label{weg}
-Ein Weg beschreibt Verbindungen zweier Kandidaten. Diese Kandidaten können direkt Verbunden werden oder auch über andere Kandidaten laufen. Dies wird wie folgt notiert.
+Ein Weg besteht aus einer oder mehreren direkten Verbindungen zweier Kandidaten und führt von Start Kandidaten zum Ziel Kandidaten. Dies wird wie folgt notiert.
 \[
 c(1),...,c(2)
 \]
+
+Eine Verbindung von Kandidat $a$ zu Kandidat $b$ besteht dann, wenn Kandidat $a$ Kandidat $b$ direkt schlagen kann, dies ist dann auch ein Weg von $a$ nach $b$. Ein Weg von Kandidat $a$ zu Kandidat $b$ kann aber auch existieren, wenn $a$ keine direkte Verbindung zu $b$ hat, aber Kandidat $a$ über andere Verbindungen zu $b$ gelangen kann, diese Folge von Verbindungen ist dann der Weg von $a$ nach $b$. 
 
 \textbf{Beispiel:} Kandidat $a$ schlägt Kandidat $b$ und Kandidat $b$ schlägt Kandidat $c$, dann schlägt Kandidat $a$ auch Kandidat $c$, da Kandidat $a$, Kandidat $b$ schlagen kann, auch wenn Kandidat $a$ nicht direkt Kandidat $c$ schlagen kann. Ein solcher Weg ist in Rot in Abbildung \ref{fig:weg} aufgezeichnet. 
 
