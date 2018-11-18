@@ -5,7 +5,7 @@
 
 \subsection{Ausgangssituation} 
 \label{sec:ausgangssituation1}
-Im ersten Beispiel wird eine Wahl untersucht, in der jeder Teilnehmer alle Kandidaten bewertet hat und damit eine eindeutige Reihenfolge der Kandidaten generiert werden kann. Kein Kandidat wurde gleich behandelt oder nicht bewertet.
+Im ersten Beispiel wird eine Wahl untersucht, in der jeder Teilnehmer alle Kandidaten bewertet hat und damit eine eindeutige Reihenfolge der Kandidaten generiert werden kann. Kein Kandidat wurde gleichbehandelt oder nicht bewertet.
 
 Bildhaft wird die \schulze in folgender Ausgangssituation eingesetzt:
 Ein Kurs von 28 Studierenden wählt einen Kurssprecher. Zur Wahl stellt sich Anton (Kandidat $a$), Berta (Kandidatin $b$), Conny (Kandidatin $c$) und Dennis (Kandidat $d$).
@@ -21,13 +21,13 @@ Jeder der 28 Studierenden muss die Kandidaten nach Erst-, Zweit-, Dritt- und Vie
 \item[5 mal] $d \succ_{v} c \succ_{v} b \succ_{v}a$
 \end{description}
 
-Dies bedeutet beispielhaft für die erste Zeile, dass sechs mal Wahlzettel abgegeben wurden, die Anton als Erstwunsch, Berta als Zweitwunsch, Dennis als Drittwunsch und Conny als Viertwunsch angegeben haben.
+Dies bedeutet beispielhaft für die erste Zeile, dass sechs Mal Wahlzettel abgegeben wurden, die Anton als Erstwunsch, Berta als Zweitwunsch, Dennis als Drittwunsch und Conny als Viertwunsch angegeben haben.
 
-Dieses Auszählung der Wahl wird nun in die \schulze überführt und bewertet.
+Diese Auszählung der Wahl wird nun in die \schulze überführt und bewertet.
 \newpage
 \subsection{Lösungsschritte} 
 \label{sec:loesungen1}
-Um die \schulze anzuwenden, muss zuerst die Menge $N$ bestimmt werde. Diese Menge bildet sich, indem jeder Kandidaten gegen jeden Kandidaten antritt.
+Um die \schulze anzuwenden, muss zuerst die Menge $N$ bestimmt werde. Diese Menge bildet sich, indem jeder Kandidat gegen jeden Kandidaten antritt.
 
 Exemplarisch wird das Duell $a$ gegen $b$ durchgeführt und die Kandidaten $c$ und $d$ ignoriert. Es können diese Kandidaten im Duell ignoriert werden, da es irrelevant ist, wo das Duell stattfindet, ob die beiden Kandidaten Dritt- und Viertwunsch sind oder ein Kandidat Erstwunsch und der andere Zweitwunsch ist. Die Betrachtung der genauen Platzierungen ergibt sich durch die Betrachtung aller Kandidaten mit diesem Verfahren.
 
@@ -69,14 +69,14 @@ In Abbildung \ref{fig:graph1} ist die Menge $N$ als gerichteter Graph aufgezeich
 \label{fig:graph1}
 \end{figure}
 
-In den Graph wurden gerichtete Kanten vom Sieger in die Richtung des Verlierers gezogen und das Kantengewicht des Siegers der Duelle aufgetragen. Dies sind die unter Abschnitt \ref{verbindung} beschriebenen Verbindungen. Nun muss aus der Definition in Abschnitt \ref{itm:def233} (2.3.2) und  (2.3.3) angewendet werden, um die Menge $P$ zu bilden, die die Stärksten Wege beinhaltet.
+In dem Graphen wurden gerichtete Kanten vom Sieger in die Richtung des Verlierers gezogen und das Kantengewicht des Siegers der Duelle aufgetragen. Dies sind die unter Abschnitt \ref{verbindung} beschriebenen Verbindungen. Nun muss aus der Definition in Abschnitt \ref{itm:def233} (2.3.2) und  (2.3.3) angewendet werden, um die Menge $P$ zu bilden, die die Stärksten Wege beinhaltet.
 
 Dazu werden nun alle Wege zwischen den Kandidaten gebildet und der stärkste Weg, das ist jener, bei dem die schwächste Verbindung am größten ist, ausgewählt für die Menge $P$.
 
 \begin{description}
 \item[$a \to b$:] Es gibt keinen Weg, der von $a$ nach $b$ führt.
 
-\item[$b \to a$:] Es gibt zwei Wege die von $b$ nach $a$ führen.
+\item[$b \to a$:] Es gibt zwei Wege, die von $b$ nach $a$ führen.
 	\begin{description}
 	\item[Weg 1:] $b$, 23, $d$, 15, $a$, der die Stärke $min_{D}\{23, 15 \}\approx_{D}15$ hat.
 	\item[Weg 2:] $b$, 18, $a$, der die Stärke 18 hat.
@@ -99,7 +99,7 @@ Dazu werden nun alle Wege zwischen den Kandidaten gebildet und der stärkste Weg
 	\end{description}
 	Damit ist die Stärke des stärksten Weges auch 15.
 	
-\item[$b \to c$:] Es gibt drei Wege die von $b$ nach $c$ führen.
+\item[$b \to c$:] Es gibt drei Wege, die von $b$ nach $c$ führen.
 	\begin{description}
 	\item[Weg 1:] $b$, 18, $a$, 19, $c$, der die Stärke $min_{D}\{18, 19 \}\approx_{D}18$ hat.
 	\item[Weg 2:] $b$, 19, $c$, der die Stärke 19 hat.
@@ -130,7 +130,7 @@ So wurden alle Wege bestimmt und die kritischen Verbindungen gefunden, sodass si
 
 \input{Tabellen/Tabelle_beispiel1_p}
 
-Die Simulation der Duelle wird für die Kandidaten erneut gemacht, dieses mal jedoch über die Menge $P$. Wenn es keinen Weg zwischen den Kandidaten gibt, also in der Tabelle ein '---' steht, so wird diese Verbindung als eine Verbindung mit der Stärke 0 betrachtet.
+Die Simulation der Duelle wird für die Kandidaten erneut gemacht, dieses Mal jedoch über die Menge $P$. Wenn es keinen Weg zwischen den Kandidaten gibt, also in der Tabelle ein '---' steht, so wird diese Verbindung als eine Verbindung mit der Stärke 0 betrachtet.
 
 Dieses Ergebnis wird in der Relation $\mathcal{O}$, wie in der Definition (2.3.4) in Abschnitt \ref{itm:def234} beschreiben.
 \newpage
@@ -153,7 +153,7 @@ Daher ergibt sich $\mathcal{O} = \{ ac,ba,bc,bd,da,dc \}$
 
 \subsection{Ergebnis} 
 \label{sec:ergebnis1}
-Um den Sieger aus der Relation $\mathcal{O}$ zu finden muss, wie in der Definition in Abschnitt \ref{itm:def235} Punkt (2.3.5) beschreiben, sichergestellt werden, das ein Sieger nur ein Kandidat sein kann, der im direkten Duell nie durch einen anderen Gegner geschlagen wird.
+Um den Sieger aus der Relation $\mathcal{O}$ zu finden muss, wie in der Definition in Abschnitt \ref{itm:def235} Punkt (2.3.5) beschreiben, sichergestellt werden, dass ein Sieger nur ein Kandidat sein kann, der im direkten Duell nie durch einen anderen Gegner geschlagen wird.
 
 Um das zu prüfen, wird die Relation $\mathcal{O}$ durchgegangen und geprüft, ob es einen Kandidaten gibt, der immer nur auf der linken Seite eine Tupel z.B: ''bd'' steht und damit immer der Gewinner ist und nie geschlagen wurde, dann würde er auf der rechten Seite des Tupels stehen.
 

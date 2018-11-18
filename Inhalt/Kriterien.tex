@@ -9,17 +9,17 @@ of Voting\grqq{}\footnote{\Vgl \citet{Schulze2018} Kapitel 11} gefunden werden. 
 \label{sec:monotoniekriterium}
 Der Gewinner einer Wahl kann nicht durch ein besseres Ranking verlieren und ein Verlierer durch ein schlechteres gewinnen.\footnote{\Vgl \citet{Woodall1996}} Dieses Kriterium ist trivial, aber zeigt, dass die zugrundeliegende Wahlmethode nicht der erwarteten Logik einer Wahl widerspricht.
 
-Das bedeutet, dass wenn die schwächste Verbindung des Siegers stärker werde, kann er dadurch nicht verlieren, das selbe gilt auch für Verlierer, wenn deren schwächste Verbindungen schwächer werden, dann können sie damit nicht gewinnen.
+Das bedeutet, dass wenn die schwächste Verbindung des Siegers stärker werde, kann er dadurch nicht verlieren, dasselbe gilt auch für Verlierer, wenn deren schwächste Verbindungen schwächer werden, dann können sie damit nicht gewinnen.
 
 \subsubsection{\condorcet Kriterium} 
 \label{sec:condorectKriterium}
-Nach der Wahl wird ein Zweikampf zweier Kandidaten Simuliert und dabei untersucht, wie oft der Kandidat $a$ dem Kandidat $b$ vorgezogen wurde. Die Bedeutung von \glqq vorgezogen\grqq{} wir in Abschnitt \ref{sec:beispiel3} für die \schulze erläutert, ist im allgemeinen aber Abhängig von der gewählten Wahlmethode. \condorcetSieger ist der Kandidat der alle anderen Kandidaten schlägt. Einen solchen Sieger muss es nicht geben. Ein Wahlverfahren erfüllt das Condorcet-Kriterium, wenn der gewählte Sieger auch der \condorcetSieger ist, sofern es einen \condorcetSieger gibt.\footnote{\Vgl \citet{Johnson2005}}
+Nach der Wahl wird ein Zweikampf zweier Kandidaten simuliert und dabei untersucht, wie oft der Kandidat $a$ dem Kandidat $b$ vorgezogen wurde. Die Bedeutung von \glqq vorgezogen\grqq{} wir in Abschnitt \ref{sec:beispiel3} für die \schulze erläutert, ist im Allgemeinen aber Abhängig von der gewählten Wahlmethode. \condorcetSieger ist der Kandidat, der alle anderen Kandidaten schlägt. Einen solchen Sieger muss es nicht geben. Ein Wahlverfahren erfüllt das Condorcet-Kriterium, wenn der gewählte Sieger auch der \condorcetSieger ist, sofern es einen \condorcetSieger gibt.\footnote{\Vgl \citet{Johnson2005}}
 
 Das Verhalten konnte in Beispiel 1 (Abschnitt \ref{sec:beispiel1}) beobachtet werden, dort wurde auch der Condorcet-Sieger der Sieger der \schulze .
 
-\subsubsection{Lösbarkeits Kriterium} 
+\subsubsection{Lösbarkeitskriterium} 
 \label{sec:loesbarkeitsKriterium}
-Es gibt Situationen, in dem kann eine Wahlmethode keinen eindeutigen Sieger hervorbringen, da die Stimmsituation für zwei oder mehrere Kandidaten gleich sind.Auch die \schulze kann nicht immer direkt einen eindeutigen Sieger bestimmen. Jedoch kann man mathematisch zeigen, dass eine Methode im Allgemeinen eine eindeutige lösung liefert.\footnote{\Vgl \citet{Schulze2017}}
+Es gibt Situationen, in dem kann eine Wahlmethode keinen eindeutigen Sieger hervorbringen, da die Stimmsituation für zwei oder mehrere Kandidaten gleich sind. Auch die \schulze kann nicht immer direkt einen eindeutigen Sieger bestimmen. Jedoch kann man mathematisch zeigen, dass eine Methode im Allgemeinen eine eindeutige Lösung liefert.\footnote{\Vgl \citet{Schulze2017}}
 \begin{enumerate}
 \item Wenn die Anzahl der Stimmen Richtung unendlich tendiert, geht die Wahrscheinlichkeit keinen eindeutigen Sieger zu erhalten gegen Null.
 \item Wenn es mehr als einen Sieger gibt, reicht eine einzelne Stimme, um einen eindeutigen Sieger zu erhalten.
@@ -35,8 +35,8 @@ Dieses Kriterium gibt an, dass
 \item wenn jeder Wähler Kandidat $a$, Kandidat $b$ vorzieht, muss Kandidat $a$ immer Kandidat $b$ bevorzugt werden
 \item wenn kein Wähler Kandidat $a$, Kandidat $b$ vorzieht, muss Kandidat $a$ nicht besser sein als $b$.\footnote{\Vgl \citet{Schulze2017}}
 
-Dieses Prinzip wird wichtig wenn Kandidaten gleich oder nicht bewertet werden. Dort darf keine Methode einen der beiden Auswählen und eine bestimmte Platzierung geben oder in eine Reihenfolge einordnen, diese Kandidaten wenn sie nicht unterschieden werden können immer auf der selben Ebene auftreten. 
+Dieses Prinzip wird wichtig wenn Kandidaten gleich oder nicht bewertet werden. Dort darf keine Methode einen der beiden Kandidaten auswählen und eine bestimmte Platzierung geben oder in eine Reihenfolge einordnen, diese Kandidaten wenn sie nicht unterschieden werden können immer auf derselben Ebene auftreten. 
 
-Dies wird oftmals gebrochen, wenn die Auswertung eine Reihenfolge ausgeben muss und dann einfach der Kandidat der im Alphabet als erstes kommt zuerst anzeigt, oder der der in der Liste als erstes Auftaucht. Das muss aber von der Wahlmethode auf jeden Fall unterbunden werden, so wie die \schulze es auch macht. 
+Dies wird oftmals gebrochen, wenn die Auswertung eine Reihenfolge ausgeben muss und dann einfach der Kandidat der im Alphabet als erstes kommt zuerst anzeigt, oder der der in der Liste als erstes auftaucht. Das muss aber von der Wahlmethode auf jeden Fall unterbunden werden, so wie die \schulze es auch macht. 
 \end{enumerate}
 

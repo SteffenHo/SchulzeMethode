@@ -4,7 +4,7 @@
 
 \subsection{Ausgangssituation} 
 \label{sec:ausgangssituation3}
-In Abschnitt \ref{sec:voraussetzungen} wurde beschrieben, dass die Schulze Methode auch Ergebnisse liefert, wenn Kandidaten gleich oder nicht bewertet wurden. Nicht bewertete Kandidaten werden dabei behandelt, als wären sie alle vom Wähler auf dem letzten Platz gewählt worden, sodass jeder Kandidat, der vom Wähler bewertet wurde, den nicht bewerteten Kandidaten vorgezogen wird. Diese Beispiel bezieht sich auf das sechste Beispiel von \glqq A New Monotonic, Clone-Independent,
+In Abschnitt \ref{sec:voraussetzungen} wurde beschrieben, dass die Schulze Methode auch Ergebnisse liefert, wenn Kandidaten gleich oder nicht bewertet wurden. Nicht bewertete Kandidaten werden dabei behandelt, als wären sie alle vom Wähler auf dem letzten Platz gewählt worden, sodass jeder Kandidat, der vom Wähler bewertet wurde, den nicht bewerteten Kandidaten vorgezogen wird. Dieses Beispiel bezieht sich auf das sechste Beispiel von \glqq A New Monotonic, Clone-Independent,
 Reversal Symmetric, and Condorcet-Consistent
 Single-Winner Election Method \grqq{}\footnote{\Vgl \citet{Schulze2017} Kapitel 3.6}.
 
@@ -28,7 +28,7 @@ Zur Erläuterung wird die Wahl $a \approx_{v} b \succ_{v} c \approx_{v}d$ betrac
 
 \subsection{Lösungsschritte} 
 \label{sec:loesungen3}
-Als erstes muss die Menge $N$ bestimmen werden, in der man die Kandidaten gegeneinander antreten lässt, nur kann es diesmal zu Duellen ohne Sieger kommen, da beide Kandidaten gleich bewertet wurden. Diese Stimmen werden dann nicht Berücksichtigt. 
+Als erstes muss die Menge $N$ bestimmen werden, in der man die Kandidaten gegeneinander antreten lässt, nur kann es diesmal zu Duellen ohne Sieger kommen, da beide Kandidaten gleich bewertet wurden. Diese Stimmen werden dann nicht berücksichtigt. 
 
 Exemplarisch wird in Tabelle \ref{beispiel3ab} das Duell von Kandidat $a$ gegen Kandidat $b$ dargestellt. 
 
@@ -48,7 +48,7 @@ In Abbildung \ref{fig:graph3} sieht man den Graphen, der aus der Menge $N$ gebil
 \label{fig:graph3}
 \end{figure}
 
-Es gibt verschiedene Möglichkeiten einen Gewinner mit der \schulze zu finden, da es verschiedene  Ansätze gibt die stärke eines Weges zu bestimmen. Die Methoden die in diesem Abschnitt vorgestellt werden sind margin, ratio, winning votes und losing votes.  Wenn alle Wähler die Kandidaten in eine strikte Ordnung gebracht haben, wie in den Beispielen 1 und 2, dann geben diese Methoden immer das selbe Ergebnis, wenn
+Es gibt verschiedene Möglichkeiten einen Gewinner mit der \schulze zu finden, da es verschiedene  Ansätze gibt die Stärke eines Weges zu bestimmen. Die Methoden die in diesem Abschnitt vorgestellt werden sind margin, ratio, winning votes und losing votes.  Wenn alle Wähler die Kandidaten in eine strikte Ordnung gebracht haben, wie in den Beispielen 1 und 2, dann geben diese Methoden immer dasselbe Ergebnis, wenn
 
 \begin{align*}
 & \forall (x_{1},x_{2}),(y_{1},y_{2}) \in \mathbb{N}_0 	\times \mathbb{N}_0 \\
@@ -77,17 +77,17 @@ Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{margin} \in \{ a\}$ und der S
 
 \subsubsection{ratio}
 \label{sec:ratio}
-Eine weitere Methode die eingesetzt wird, um einen Sieger zu erhalten ist ein Verhältnis (eng: ratio) zu ermitteln. Hierzu werden die Stimmen für den Sieger durch die Stimmen gegen den Sieger geteilt und damit das Verhältnis ausgerechnet, mit dem der Sieger gewonnen hat.
+Eine weitere Methode, die eingesetzt wird, um einen Sieger zu erhalten ist ein Verhältnis (eng: ratio) zu ermitteln. Hierzu werden die Stimmen für den Sieger durch die Stimmen gegen den Sieger geteilt und damit das Verhältnis ausgerechnet, mit dem der Sieger gewonnen hat.
 
-Beispielhaft wird wieder das Duelle von Kandidat $a$ gegen Kandidat $b$ betrachtet. Im Duell $a$ gegen $b$ ist, wie im Vergleich über den Abstand (Abschnitt \ref{sec:margin}), der direkte Weg der stärkste Weg. Der Stärkste Weg von Kandidat $b$ zu Kandidat $a$ ist im Vergleich über das Verhältnis aber ein anderer. Er führt von $b$ über $c$ nach $a$ . Die kritische Verbindung ist in diesem Fall die Verbindung von $c$ nach $a$, da hier ein Verhältnis von $36/28 \approx 1,286$, das kleinste Verhältnis auf diesem Weg darstellt. Wird der Weg von Kandidat $b$ nach $a$ aus Abschnitt \ref{sec:margin} untersucht, ist dort die Kritische Verbindung $d$ nach $a$, was ein Verhältnis von $ 50/40 = 1,25$ darstellt und damit eine schlechteres Verhältnis als der Weg $b$ über $c$ nach $a$ hat.
+Beispielhaft wird wieder das Duelle von Kandidat $a$ gegen Kandidat $b$ betrachtet. Im Duell $a$ gegen $b$ ist, wie im Vergleich über den Abstand (Abschnitt \ref{sec:margin}), der direkte Weg der stärkste Weg. Der Stärkste Weg von Kandidat $b$ zu Kandidat $a$ ist im Vergleich über das Verhältnis aber ein anderer. Er führt von $b$ über $c$ nach $a$ . Die kritische Verbindung ist in diesem Fall die Verbindung von $c$ nach $a$, da hier ein Verhältnis von $36/28 \approx 1,286$, das kleinste Verhältnis auf diesem Weg darstellt. Wird der Weg von Kandidat $b$ nach $a$ aus Abschnitt \ref{sec:margin} untersucht, ist dort die Kritische Verbindung $d$ nach $a$, was ein Verhältnis von $ 50/40 = 1,25$ darstellt und damit ein schlechteres Verhältnis als der Weg $b$ über $c$ nach $a$ hat.
 
-Die Berechnung der besten Verhältnisse wird wieder für alle Duelle gemacht und  Tabelle \ref{beispiel3ratio_p} zeigt die Menge $P$ unter Betrachtung des Verhältnisse.
+Die Berechnung der besten Verhältnisse wird wieder für alle Duelle gemacht und  Tabelle \ref{beispiel3ratio_p} zeigt die Menge $P$ unter Betrachtung des Verhältnisses.
 
 \input{Tabellen/beispiel3ratio_p}
 
 Anschließend wird mit den Werten der Menge $P$ die neu Zweikampfsituation erstellt und man erhält die Relation $\mathcal{O}_{ratio} = \{ ba,bc,bd,ca,cd,da \}$
 
-Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{ratio} \in \{ b\}$ und er Sieger unter Berücksichtigung des Verhältnis ist Kandidat $b$.
+Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{ratio} \in \{ b\}$ und er Sieger unter Berücksichtigung des Verhältnisses ist Kandidat $b$.
 
 \subsubsection{winning votes}
 \label{sec:winningVotes}
@@ -100,29 +100,29 @@ Diese Untersuchung wird für alle Duelle gemacht und es ergibt sich die in Tabel
 
 Anschließend wird mit den Werten der Menge $P$ die neu Zweikampfsituation erstellt und man erhält die Relation $\mathcal{O}_{win} = \{ ab,ac,bc,da,db,dc \}$
 
-Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{win} \in \{d\}$ und er Sieger unter Berücksichtigung des Verhältnis ist Kandidat $d$.
+Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{win} \in \{d\}$ und er Sieger unter Berücksichtigung der $winning votes$ ist Kandidat $d$.
 
 
 \subsubsection{losing votes}
 \label{sec:lose}
-Ein anderer Ansatz der angewendet werden kann, ist den Kandidaten zum Sieger zu küren, der am wenigsten Gegenstimmen hat (eng. losing votes). Die kritische Verbindung ist dabei die Verbindung, bei der es die meisten Gegenstimmen gibt. Der stärkste Weg ist dann der Weg, bei dem die kritische Verbindung die wenigsten Gegenstimmen hat.
+Ein anderer Ansatz, der angewendet werden kann, ist den Kandidaten zum Sieger zu küren, der am wenigsten Gegenstimmen hat (eng. losing votes). Die kritische Verbindung ist dabei die Verbindung, bei der es die meisten Gegenstimmen gibt. Der stärkste Weg ist dann der Weg, bei dem die kritische Verbindung die wenigsten Gegenstimmen hat.
 
 Für dieses Verfahren wird beispielhaft das Duell von Kandidat $a$ und Kandidat $c$ untersucht. Kandidat $a$ kann Kandidat $c$ schlagen über den Weg $a$ über $b$ nach $c$. Dort ist die kritische Verbindung zwischen Kandidat $b$ und $c$, da es an dieser Stelle 59 Gegenstimmen gibt. 
 Kandidat $c$ kann Kandidat $a$ über den direkten Weg schlagen und hat dabei nur 28 Gegenstimmen. Die zweite Möglichkeit wäre der Weg von $c$ über $d$ nach $a$, dort wäre die kritische Verbindung von Kandidat $d$ nach $a$ mit 40 Gegenstimmen. Daher wird die Direktverbindung genutzt mit nur 28 Gegenstimmen.
 Beide Wege werden nun verglichen und Kandidat $c$ gewinnt gegen Kandidat $a$, da $c$ nur 28 Gegenstimmen hat und Kandidat $a$ 59 Gegenstimmen.
 
-Alle Duelle werde so untersucht, die Ergebnisse, die die Menge $P$ bilden, sind in Tabelle \ref{beispiel3losing_p} eingetragen.
+Alle Duelle werden so untersucht, die Ergebnisse, die die Menge $P$ bilden, sind in Tabelle \ref{beispiel3losing_p} eingetragen.
 
 \input{Tabellen/beispiel3losing_p}
 
 
 Anschließend wird mit den Werten der Menge $P$ die neu Zweikampfsituation erstellt und man erhält die Relation $\mathcal{O}_{los} = \{ ab,ca,cb,cd,da,db \}$
 
-Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{los} \in \{c\}$ und er Sieger unter Berücksichtigung des Verhältnis ist Kandidat $d$.
+Daraus ergibt sich die Ergebnismenge $\mathcal{S}_{los} \in \{c\}$ und er Sieger unter Berücksichtigung der $losing votes$ ist Kandidat $d$.
 
 \subsection{Ergebnis} 
 \label{sec:ergebnis3}
-Dieses Beispiel zeigt, dass es schwer sein kann zu bestimmen, wann ein Kandidat einen anderen schlägt. Jede Methode ist logisch, korrekt und nachvollziehbar. Das die vier vorgestellten Methoden unterschiedliche Ergebnisse liefern, ist aber nur dann der Fall, wenn es dem Wählern erlaubt ist Kandidaten auch gleich zu bewerten. Daher muss beachtet werden, dass wenn man Kandidaten gleich bewerten kann, vorher festgelegt werden muss, nach welcher Methode die Stimmen bewertet werden, da es sonst unter Umständen zu verschiedenen Siegern kommen kann. Dieses Beispiel wurde extra so von Herrn Schulze in seiner Ausarbeitung \glqq A New Monotonic, Clone-Independent,
+Dieses Beispiel zeigt, dass es schwer sein kann zu bestimmen, wann ein Kandidat einen anderen schlägt. Jede Methode ist logisch, korrekt und nachvollziehbar. Dass die vier vorgestellten Methoden unterschiedliche Ergebnisse liefern, ist aber nur dann der Fall, wenn es den Wählern erlaubt ist Kandidaten auch gleich zu bewerten. Daher muss beachtet werden, dass wenn man Kandidaten gleich bewerten kann, vorher festgelegt werden muss, nach welcher Methode die Stimmen bewertet werden, da es sonst unter Umständen zu verschiedenen Siegern kommen kann. Dieses Beispiel wurde extra so von Herrn Schulze in seiner Ausarbeitung \glqq A New Monotonic, Clone-Independent,
 Reversal Symmetric, and Condorcet-Consistent
-Single-Winner Election Method\grqq{}\footnote{\Vgl \citet{Schulze2017}} konstruiert, dass bei jeder der Methoden unter Abschnitt \ref{sec:loesungen3} immer ein anderer Sieger als Ergebnis geliefert wird. In der Realität kann es auch vorkommen, dass mehrere der vorgestellten Methoden die selben Sieger liefern, auch wenn Kandidaten gleich bewertet wurden.
+Single-Winner Election Method\grqq{}\footnote{\Vgl \citet{Schulze2017}} konstruiert, dass bei jeder der Methoden unter Abschnitt \ref{sec:loesungen3} immer ein anderer Sieger als Ergebnis geliefert wird. In der Realität kann es auch vorkommen, dass mehrere der vorgestellten Methoden dieselben Sieger liefern, auch wenn Kandidaten gleich bewertet wurden.
 \newpage

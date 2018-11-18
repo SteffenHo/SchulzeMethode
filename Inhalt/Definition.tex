@@ -18,10 +18,10 @@ Sei $A$ eine endliche nicht leere Menge an Kandidaten. Wobei die Anzahl der Kand
 
 \item Jeder Wähler ordnet den Kandidaten eine Zahl zu und aus dieser Zahl wird eine Rangfolge erstellt. Je kleiner die Zahl ist desto höher ist die Platzierung. Hierbei ist die Größe der Zahl oder der Abstand uninteressant, da nur die Rangfolge betrachtet wird.
 
-Des weiteren gilt:
+Des Weiteren gilt:
 \begin{enumerate}
 \item \label{itm:Regel1} Es können mehrere Kandidaten die gleiche Platzierung haben, dass bedeutet, dass kein Unterscheidung der Kandidaten auf dieser Platzierung vorgenommen werden kann. 
-\item Wenn ein Wähler keine Bewertung für einen Kandidaten abgibt, werden alle Kandidaten, die eine Bewertung haben, diesem Kandidaten vorgezogen. Werden mehrere Kandidaten nicht bewertet, werden sie wir im vorherigen Punkt gleich behandelt.
+\item Wenn ein Wähler keine Bewertung für einen Kandidaten abgibt, werden alle Kandidaten, die eine Bewertung haben, diesem Kandidaten vorgezogen. Werden mehrere Kandidaten nicht bewertet, werden sie wir im vorherigen Punkt gleichbehandelt.
 \end{enumerate}
 \end{enumerate}
 
@@ -35,18 +35,18 @@ Da dies nur Erläuterungen zu einzelnen Punkten der Definition sind, ist es elem
 
 \subsubsection{Verbindung}
 \label{sec:verbindung}
-Eine Verbindung in diesem Kontext bedeutet, dass zwei Kandidaten gegeneinander antreten und diese Duell ist eine Verbindung mit der folgender Notation
+Eine Verbindung in diesem Kontext bedeutet, dass zwei Kandidaten gegeneinander antreten und diese Duell ist eine Verbindung mit der folgenden Notation
 
 \[
 (N[a,b],N[b,a])
 \]
 \textbf{Beispiel:}
-Kandidat $a$ wird von fünf Wählern dem Kandidaten $b$ vorgezogen, und Kandidat $b$ wird von zwei Wählern Kandidat $a$ vorgezogen, würde wie folgt Notiert werden. 
+Kandidat $a$ wird von fünf Wählern dem Kandidaten $b$ vorgezogen, und Kandidat $b$ wird von zwei Wählern Kandidat $a$ vorgezogen, würde wie folgt notiert werden. 
 \[
 (5,2)
 \]
 
-In den Beispielen werden diese Duelle in einem Graphen dargestellt. Eine vollständigen Schreibweise, wie in Abbildung \ref{fig:verbindung1} skizziert, wird in Beispiel 3 benötigt.
+In den Beispielen werden diese Duelle in einem Graphen dargestellt. Eine vollständige Schreibweise, wie in Abbildung \ref{fig:verbindung1} skizziert, wird in Beispiel 3 benötigt.
 
 \begin{figure}[!h]
 \centering
@@ -72,7 +72,7 @@ Ein Weg beschreibt Verbindungen zweier Kandidaten. Diese Kandidaten können dire
 c(1),...,c(2)
 \]
 
-\textbf{Beispiel:} Kandidat $a$ schlägt Kandidat $b$ und Kandidat $b$ schlägt Kandidat $c$, dann schlägt Kandidat $a$ auch Kandidat $c$, da Kandidat $a$, Kandidat $b$ schlagen kann, auch wenn Kandidat $a$ nicht direkt Kandidat $c$ schlagen kann. Ein solcher Weg ist in rot in Abbildung \ref{fig:weg} aufgezeichnet. 
+\textbf{Beispiel:} Kandidat $a$ schlägt Kandidat $b$ und Kandidat $b$ schlägt Kandidat $c$, dann schlägt Kandidat $a$ auch Kandidat $c$, da Kandidat $a$, Kandidat $b$ schlagen kann, auch wenn Kandidat $a$ nicht direkt Kandidat $c$ schlagen kann. Ein solcher Weg ist in Rot in Abbildung \ref{fig:weg} aufgezeichnet. 
 
 \begin{figure}[!h]
 \centering
@@ -107,7 +107,7 @@ Die \schulze nutzt die Relation $\mathcal{O}$, um dort die Ergebnisse der Duelle
 \subsection{Theoretische Grundlagen} 
 \label{sec:theoretische Grundlagen}
 
-Die grundsätzliche Idee der \schulze ist es, ein condorcetes Verfahren, wie in Abschnitt \ref{sec:condorectKriterium} beschrieben, durchzuführen. Dieses Verfahren wird jedoch über eine neue Berechnungsstufe verfeinert, um in einer Situationen einen Sieger zu ermitteln, in der die einfache \condorcetMethode keine Lösung liefert.
+Die grundsätzliche Idee der \schulze ist es, ein condorcetes Verfahren, wie in Abschnitt \ref{sec:condorectKriterium} beschrieben, durchzuführen. Dieses Verfahren wird jedoch über eine neue Berechnungsstufe verfeinert, um in einer Situation einen Sieger zu ermitteln, in der die einfache \condorcetMethode keine Lösung liefert.
 
 In diesem Abschnitt werden die Theoretischen Grundlagen erläutert und in den Abschnitten \ref{sec:beispiel1},  \ref{sec:beispiel2} und \ref{sec:beispiel3} an Beispielen erläutert.
 
@@ -144,7 +144,7 @@ P_{D}[a,b] := max\textsubscript{D}\{ min\textsubscript{D} \{(N[c(i),c(i+1)],N[c(
      |c(1),...,c(n) \text{ ein Weg von Kandidat a zu Kandidat b}\} \nonumber
 \end{align}
 
-In andere Worten: $P_{D}[a,b] \in \mathbb{N}_{0} \times \mathbb{N}_{0}$ ist die Stärke des stärksten Weges von Kandidat $a \in A$ zu Kandidat $b \in A$.
+In anderen Worten: $P_{D}[a,b] \in \mathbb{N}_{0} \times \mathbb{N}_{0}$ ist die Stärke des stärksten Weges von Kandidat $a \in A$ zu Kandidat $b \in A$.
 
 \item[\namedlabel{itm:def234}{$(2.3.4)$}]Die zweistellige Relation $\mathcal{O}$ auf $A$ ist wie folgt definiert:
 \[
